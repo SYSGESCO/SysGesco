@@ -1,0 +1,6 @@
+{
+  "name": "SysGesco",
+  "description": "ERP de gestion scolaire offline-first multi-établissements : scolarité, caisse FCFA, notes, bulletins, emplois du temps et assiduité.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -203,7 +203,7 @@ export const StudentsView: React.FC = () => {
       {/* Header & Controls */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-4 rounded-2xl border border-slate-100 shadow-xs">
         <div>
-          <h1 className="text-xl font-bold text-[#00236f]">Dossiers Scolaires &amp; Élèves</h1>
+          <h1 className="text-xl font-bold text-[#1e3a5f]">Dossiers Scolaires &amp; Élèves</h1>
           <p className="text-xs text-slate-500">
             {filteredStudents.length} élève{filteredStudents.length > 1 ? 's' : ''} répertorié{filteredStudents.length > 1 ? 's' : ''} dans l’établissement
           </p>
@@ -227,7 +227,7 @@ export const StudentsView: React.FC = () => {
               setNewMatricule(generateMatricule());
               setShowAddModal(true);
             }}
-            className="h-10 px-4 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold flex items-center gap-2 shadow-xs active:scale-[0.98] transition-all"
+            className="h-10 px-4 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold flex items-center gap-2 shadow-xs active:scale-[0.98] transition-all"
           >
             <Plus className="w-4 h-4" />
             <span>Inscrire un élève</span>
@@ -244,7 +244,7 @@ export const StudentsView: React.FC = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Rechercher par nom, prénom ou matricule..."
-            className="w-full h-10 pl-9 pr-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#00236f] shadow-xs"
+            className="w-full h-10 pl-9 pr-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#1e3a5f] shadow-xs"
           />
         </div>
 
@@ -252,7 +252,7 @@ export const StudentsView: React.FC = () => {
           <select
             value={selectedClassId}
             onChange={(e) => setSelectedClassId(e.target.value)}
-            className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-800 font-medium focus:outline-none focus:border-[#00236f] shadow-xs"
+            className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-800 font-medium focus:outline-none focus:border-[#1e3a5f] shadow-xs"
           >
             <option value="all">Toutes les classes ({classes.length})</option>
             {classes.map((c) => (
@@ -276,7 +276,7 @@ export const StudentsView: React.FC = () => {
               className="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm hover:border-blue-200 transition-all space-y-3"
             >
               <div className="flex items-start gap-3">
-                <div className="w-12 h-12 rounded-xl bg-slate-100 overflow-hidden shrink-0 border border-slate-200 flex items-center justify-center font-bold text-[#00236f] text-sm">
+                <div className="w-12 h-12 rounded-xl bg-slate-100 overflow-hidden shrink-0 border border-slate-200 flex items-center justify-center font-bold text-[#1e3a5f] text-sm">
                   {student.photoUrl ? (
                     <img src={student.photoUrl} alt="" className="w-full h-full object-cover" />
                   ) : (
@@ -296,7 +296,7 @@ export const StudentsView: React.FC = () => {
                     {student.lastName} {student.firstName}
                   </h3>
                   <p className="text-xs text-slate-500 flex items-center gap-1 mt-0.5">
-                    <GraduationCap className="w-3.5 h-3.5 text-[#00236f]" />
+                    <GraduationCap className="w-3.5 h-3.5 text-[#1e3a5f]" />
                     <span className="font-semibold text-slate-700">
                       {studentClass?.name || 'Classe non assignée'}
                     </span>
@@ -305,7 +305,7 @@ export const StudentsView: React.FC = () => {
               </div>
 
               {/* Financial Snapshot */}
-              <div className="bg-[#faf8ff] p-2.5 rounded-xl border border-slate-100 flex items-center justify-between text-xs font-mono">
+              <div className="bg-[#f5f7fa] p-2.5 rounded-xl border border-slate-100 flex items-center justify-between text-xs font-mono">
                 <div>
                   <span className="text-[10px] text-slate-400 font-sans block">Payé</span>
                   <span className="font-bold text-emerald-700">
@@ -324,7 +324,7 @@ export const StudentsView: React.FC = () => {
               <div className="flex items-center gap-2 pt-1 border-t border-slate-100">
                 <button
                   onClick={() => setActiveStudentModal(student)}
-                  className="flex-1 h-9 rounded-lg bg-blue-50 hover:bg-blue-100 text-[#00236f] text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                  className="flex-1 h-9 rounded-lg bg-blue-50 hover:bg-blue-100 text-[#1e3a5f] text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
                 >
                   <User className="w-3.5 h-3.5" />
                   <span>Fiche complète</span>
@@ -371,7 +371,7 @@ export const StudentsView: React.FC = () => {
           <div className="w-full max-w-lg bg-white rounded-2xl shadow-2xl p-6 space-y-4 max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between border-b pb-3">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#00236f] flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#1e3a5f] flex items-center justify-center">
                   <Plus className="w-4 h-4" />
                 </div>
                 <h3 className="text-base font-bold text-slate-900">Inscription Directe Élève</h3>
@@ -386,10 +386,10 @@ export const StudentsView: React.FC = () => {
 
             <form onSubmit={handleAddSubmit} className="space-y-3.5">
               {/* Numéro Matricule */}
-              <div className="bg-[#faf8ff] p-3 rounded-xl border border-blue-100 space-y-1.5">
+              <div className="bg-[#f5f7fa] p-3 rounded-xl border border-blue-100 space-y-1.5">
                 <div className="flex items-center justify-between">
                   <label className="block text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                    <Hash className="w-3.5 h-3.5 text-[#00236f]" />
+                    <Hash className="w-3.5 h-3.5 text-[#1e3a5f]" />
                     <span>Numéro Matricule de l’Élève</span>
                     <span className="text-rose-500">*</span>
                   </label>
@@ -400,7 +400,7 @@ export const StudentsView: React.FC = () => {
                       setNewMatricule(generated);
                       showToast(`Nouveau matricule généré : ${generated}`, 'info');
                     }}
-                    className="text-[11px] font-semibold text-[#00236f] hover:text-[#1e3a8a] flex items-center gap-1 hover:underline"
+                    className="text-[11px] font-semibold text-[#1e3a5f] hover:text-[#1e3a8a] flex items-center gap-1 hover:underline"
                   >
                     <Sparkles className="w-3 h-3 text-amber-600" />
                     <span>Régénérer auto</span>
@@ -413,7 +413,7 @@ export const StudentsView: React.FC = () => {
                     value={newMatricule}
                     onChange={(e) => setNewMatricule(e.target.value)}
                     placeholder="ex: CI-2026-4819 ou MAT-0082"
-                    className="w-full h-10 pl-3 pr-24 rounded-xl border border-slate-200 bg-white text-xs font-mono font-bold text-slate-900 focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 pl-3 pr-24 rounded-xl border border-slate-200 bg-white text-xs font-mono font-bold text-slate-900 focus:outline-none focus:border-[#1e3a5f]"
                   />
                   <span className="absolute right-3 top-2.5 text-[10px] font-semibold text-slate-400 uppercase tracking-wider font-mono">
                     Matricule
@@ -435,7 +435,7 @@ export const StudentsView: React.FC = () => {
                     value={newLastName}
                     onChange={(e) => setNewLastName(e.target.value)}
                     placeholder="ex: KOUASSI"
-                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                   />
                 </div>
                 <div>
@@ -448,7 +448,7 @@ export const StudentsView: React.FC = () => {
                     value={newFirstName}
                     onChange={(e) => setNewFirstName(e.target.value)}
                     placeholder="ex: Ange Michel"
-                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                   />
                 </div>
               </div>
@@ -459,7 +459,7 @@ export const StudentsView: React.FC = () => {
                   <select
                     value={newGender}
                     onChange={(e) => setNewGender(e.target.value as any)}
-                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                   >
                     <option value="M">Masculin</option>
                     <option value="F">Féminin</option>
@@ -471,7 +471,7 @@ export const StudentsView: React.FC = () => {
                     type="date"
                     value={newDateOfBirth}
                     onChange={(e) => setNewDateOfBirth(e.target.value)}
-                    className="w-full h-10 px-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                   />
                 </div>
                 <div>
@@ -481,7 +481,7 @@ export const StudentsView: React.FC = () => {
                   <select
                     value={newClassId}
                     onChange={(e) => setNewClassId(e.target.value)}
-                    className="w-full h-10 px-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                   >
                     {classes.map((c) => (
                       <option key={c.id} value={c.id}>
@@ -502,7 +502,7 @@ export const StudentsView: React.FC = () => {
                       value={newGuardianName}
                       onChange={(e) => setNewGuardianName(e.target.value)}
                       placeholder="M. KOUASSI Jérôme"
-                      className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                      className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                     />
                   </div>
                   <div>
@@ -515,7 +515,7 @@ export const StudentsView: React.FC = () => {
                       value={newGuardianPhone}
                       onChange={(e) => setNewGuardianPhone(e.target.value)}
                       placeholder="+225 07 00 00 00"
-                      className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                      className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                     />
                   </div>
                 </div>
@@ -527,7 +527,7 @@ export const StudentsView: React.FC = () => {
                     value={newGuardianAddress}
                     onChange={(e) => setNewGuardianAddress(e.target.value)}
                     placeholder="Commune, Quartier, Lot..."
-                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                   />
                 </div>
               </div>
@@ -541,7 +541,7 @@ export const StudentsView: React.FC = () => {
                   step="5000"
                   value={newTuitionTotal}
                   onChange={(e) => setNewTuitionTotal(Number(e.target.value))}
-                  className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs font-mono font-bold focus:outline-none focus:border-[#00236f]"
+                  className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs font-mono font-bold focus:outline-none focus:border-[#1e3a5f]"
                 />
                 <span className="text-[10px] text-slate-400 mt-0.5 block">
                   Matricule et situation financière initiale générés automatiquement.
@@ -552,15 +552,15 @@ export const StudentsView: React.FC = () => {
               <div className="border-t border-slate-100 pt-3 space-y-2.5">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
-                    <ShieldCheck className="w-4 h-4 text-[#00236f]" />
+                    <ShieldCheck className="w-4 h-4 text-[#1e3a5f]" />
                     <span className="text-xs font-bold text-slate-800">Espace Élève & Accès Dédié</span>
                   </div>
-                  <label className="flex items-center gap-1.5 cursor-pointer text-[11px] font-semibold text-[#00236f] select-none">
+                  <label className="flex items-center gap-1.5 cursor-pointer text-[11px] font-semibold text-[#1e3a5f] select-none">
                     <input
                       type="checkbox"
                       checked={createStudentPortalAccount}
                       onChange={(e) => setCreateStudentPortalAccount(e.target.checked)}
-                      className="w-4 h-4 rounded border-slate-300 text-[#00236f] focus:ring-[#00236f]"
+                      className="w-4 h-4 rounded border-slate-300 text-[#1e3a5f] focus:ring-[#1e3a5f]"
                     />
                     <span>Attribuer un compte personnel</span>
                   </label>
@@ -579,7 +579,7 @@ export const StudentsView: React.FC = () => {
                             value={newLoginUsername}
                             onChange={(e) => setNewLoginUsername(e.target.value)}
                             placeholder={newMatricule.trim() || 'Matricule auto'}
-                            className="w-full h-9 pl-7 pr-2 rounded-lg border border-slate-200 bg-white text-xs font-mono font-bold text-slate-800 focus:outline-none focus:border-[#00236f]"
+                            className="w-full h-9 pl-7 pr-2 rounded-lg border border-slate-200 bg-white text-xs font-mono font-bold text-slate-800 focus:outline-none focus:border-[#1e3a5f]"
                           />
                           <User className="w-3.5 h-3.5 text-slate-400 absolute left-2 top-2.5 pointer-events-none" />
                         </div>
@@ -596,7 +596,7 @@ export const StudentsView: React.FC = () => {
                           <button
                             type="button"
                             onClick={generateRandomPassword}
-                            className="text-[10px] text-[#00236f] font-bold hover:underline flex items-center gap-0.5"
+                            className="text-[10px] text-[#1e3a5f] font-bold hover:underline flex items-center gap-0.5"
                           >
                             <Sparkles className="w-2.5 h-2.5" /> Générer
                           </button>
@@ -607,7 +607,7 @@ export const StudentsView: React.FC = () => {
                             value={newLoginPassword}
                             onChange={(e) => setNewLoginPassword(e.target.value)}
                             placeholder="Eleve@2026"
-                            className="w-full h-9 pl-7 pr-8 rounded-lg border border-slate-200 bg-white text-xs font-mono font-bold text-slate-800 focus:outline-none focus:border-[#00236f]"
+                            className="w-full h-9 pl-7 pr-8 rounded-lg border border-slate-200 bg-white text-xs font-mono font-bold text-slate-800 focus:outline-none focus:border-[#1e3a5f]"
                           />
                           <KeyRound className="w-3.5 h-3.5 text-slate-400 absolute left-2 top-2.5 pointer-events-none" />
                           <button
@@ -641,7 +641,7 @@ export const StudentsView: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="w-2/3 h-11 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold shadow-xs"
+                  className="w-2/3 h-11 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold shadow-xs"
                 >
                   Valider l’inscription
                 </button>
@@ -660,7 +660,7 @@ export const StudentsView: React.FC = () => {
             {/* Modal Header */}
             <div className="flex items-start justify-between border-b pb-3">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#00236f] flex items-center justify-center font-bold text-base">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#1e3a5f] flex items-center justify-center font-bold text-base">
                   {activeStudentModal.firstName[0]}
                   {activeStudentModal.lastName[0]}
                 </div>
@@ -684,8 +684,8 @@ export const StudentsView: React.FC = () => {
             {/* Fiche Sections */}
             <div className="space-y-3 text-xs">
               {/* Identité & Scolarité */}
-              <div className="bg-[#faf8ff] p-3 rounded-xl border border-slate-100 space-y-1.5">
-                <h4 className="font-bold text-[#00236f] text-xs uppercase tracking-wider">
+              <div className="bg-[#f5f7fa] p-3 rounded-xl border border-slate-100 space-y-1.5">
+                <h4 className="font-bold text-[#1e3a5f] text-xs uppercase tracking-wider">
                   Identité &amp; Scolarité
                 </h4>
                 <div className="grid grid-cols-2 gap-2 text-slate-700">
@@ -701,7 +701,7 @@ export const StudentsView: React.FC = () => {
                   </div>
                   <div>
                     <span className="text-slate-400 block text-[10px]">Classe active :</span>
-                    <span className="font-semibold text-[#00236f]">
+                    <span className="font-semibold text-[#1e3a5f]">
                       {classes.find((c) => c.id === activeStudentModal.classId)?.name || 'N/A'}
                     </span>
                   </div>
@@ -713,8 +713,8 @@ export const StudentsView: React.FC = () => {
               </div>
 
               {/* Responsable Légal */}
-              <div className="bg-[#faf8ff] p-3 rounded-xl border border-slate-100 space-y-1.5">
-                <h4 className="font-bold text-[#00236f] text-xs uppercase tracking-wider">
+              <div className="bg-[#f5f7fa] p-3 rounded-xl border border-slate-100 space-y-1.5">
+                <h4 className="font-bold text-[#1e3a5f] text-xs uppercase tracking-wider">
                   Responsable / Tuteur
                 </h4>
                 <div className="grid grid-cols-2 gap-2 text-slate-700">
@@ -726,7 +726,7 @@ export const StudentsView: React.FC = () => {
                     <span className="text-slate-400 block text-[10px]">Téléphone :</span>
                     <a
                       href={`tel:${activeStudentModal.guardianPhone}`}
-                      className="font-semibold text-[#00236f] underline font-mono"
+                      className="font-semibold text-[#1e3a5f] underline font-mono"
                     >
                       {activeStudentModal.guardianPhone}
                     </a>
@@ -739,8 +739,8 @@ export const StudentsView: React.FC = () => {
               </div>
 
               {/* Situation Financière */}
-              <div className="bg-[#faf8ff] p-3 rounded-xl border border-slate-100 space-y-1.5">
-                <h4 className="font-bold text-[#00236f] text-xs uppercase tracking-wider">
+              <div className="bg-[#f5f7fa] p-3 rounded-xl border border-slate-100 space-y-1.5">
+                <h4 className="font-bold text-[#1e3a5f] text-xs uppercase tracking-wider">
                   Situation Financière FCFA
                 </h4>
                 <div className="grid grid-cols-3 gap-2 p-2 bg-white rounded-lg border border-slate-100 text-center font-mono">
@@ -770,11 +770,11 @@ export const StudentsView: React.FC = () => {
               </div>
 
               {/* Accès Espace Personnel Élève */}
-              <div className="bg-[#faf8ff] p-3 rounded-xl border border-blue-100 space-y-2">
+              <div className="bg-[#f5f7fa] p-3 rounded-xl border border-blue-100 space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
-                    <ShieldCheck className="w-4 h-4 text-[#00236f]" />
-                    <h4 className="font-bold text-[#00236f] text-xs uppercase tracking-wider">
+                    <ShieldCheck className="w-4 h-4 text-[#1e3a5f]" />
+                    <h4 className="font-bold text-[#1e3a5f] text-xs uppercase tracking-wider">
                       Accès Espace Personnel Élève
                     </h4>
                   </div>
@@ -784,7 +784,7 @@ export const StudentsView: React.FC = () => {
                       loginAsStudent(activeStudentModal.id);
                       setActiveStudentModal(null);
                     }}
-                    className="px-2.5 py-1 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-lg text-[11px] font-bold flex items-center gap-1 shadow-2xs"
+                    className="px-2.5 py-1 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-lg text-[11px] font-bold flex items-center gap-1 shadow-2xs"
                     title="Basculer et tester l'espace de cet élève"
                   >
                     <LogIn className="w-3 h-3" />
@@ -807,7 +807,7 @@ export const StudentsView: React.FC = () => {
                           );
                           showToast('Identifiant copié !', 'success');
                         }}
-                        className="p-1 text-slate-400 hover:text-[#00236f]"
+                        className="p-1 text-slate-400 hover:text-[#1e3a5f]"
                         title="Copier l'identifiant"
                       >
                         <Copy className="w-3 h-3" />
@@ -829,7 +829,7 @@ export const StudentsView: React.FC = () => {
                           );
                           showToast('Mot de passe copié !', 'success');
                         }}
-                        className="p-1 text-slate-400 hover:text-[#00236f]"
+                        className="p-1 text-slate-400 hover:text-[#1e3a5f]"
                         title="Copier le mot de passe"
                       >
                         <Copy className="w-3 h-3" />
@@ -846,7 +846,7 @@ export const StudentsView: React.FC = () => {
                       value={customNewPassword}
                       onChange={(e) => setCustomNewPassword(e.target.value)}
                       placeholder="Nouveau mot de passe..."
-                      className="flex-1 h-8 px-2.5 rounded-lg border border-slate-200 text-xs font-mono font-bold focus:outline-none focus:border-[#00236f]"
+                      className="flex-1 h-8 px-2.5 rounded-lg border border-slate-200 text-xs font-mono font-bold focus:outline-none focus:border-[#1e3a5f]"
                     />
                     <button
                       type="button"
@@ -890,7 +890,7 @@ export const StudentsView: React.FC = () => {
                         setIsChangingPassword(true);
                         setCustomNewPassword(activeStudentModal.loginPassword || 'Eleve@2026');
                       }}
-                      className="text-[#00236f] font-semibold hover:underline flex items-center gap-1"
+                      className="text-[#1e3a5f] font-semibold hover:underline flex items-center gap-1"
                     >
                       <KeyRound className="w-3 h-3" /> Modifier le mot de passe
                     </button>
@@ -913,7 +913,7 @@ export const StudentsView: React.FC = () => {
 
               <button
                 onClick={() => setActiveStudentModal(null)}
-                className="h-10 px-5 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold"
+                className="h-10 px-5 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold"
               >
                 Fermer
               </button>
@@ -955,7 +955,7 @@ export const StudentsView: React.FC = () => {
                   Identifiant (Login)
                 </span>
                 <div className="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200">
-                  <span className="font-mono font-bold text-sm text-[#00236f]">
+                  <span className="font-mono font-bold text-sm text-[#1e3a5f]">
                     {createdStudentCredentials.username}
                   </span>
                   <button
@@ -966,7 +966,7 @@ export const StudentsView: React.FC = () => {
                       setTimeout(() => setCopiedLogin(false), 2000);
                       showToast('Identifiant copié !', 'success');
                     }}
-                    className="text-xs font-semibold text-[#00236f] hover:underline flex items-center gap-1"
+                    className="text-xs font-semibold text-[#1e3a5f] hover:underline flex items-center gap-1"
                   >
                     {copiedLogin ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copiedLogin ? 'Copié' : 'Copier'}</span>
@@ -991,7 +991,7 @@ export const StudentsView: React.FC = () => {
                       setTimeout(() => setCopiedPassword(false), 2000);
                       showToast('Mot de passe copié !', 'success');
                     }}
-                    className="text-xs font-semibold text-[#00236f] hover:underline flex items-center gap-1"
+                    className="text-xs font-semibold text-[#1e3a5f] hover:underline flex items-center gap-1"
                   >
                     {copiedPassword ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copiedPassword ? 'Copié' : 'Copier'}</span>
@@ -1012,7 +1012,7 @@ export const StudentsView: React.FC = () => {
                   loginAsStudent(createdStudentCredentials.student.id);
                   setCreatedStudentCredentials(null);
                 }}
-                className="w-full h-11 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-xs transition-colors"
+                className="w-full h-11 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-xs transition-colors"
               >
                 <LogIn className="w-4 h-4" />
                 <span>Tester et basculer sur son espace élève</span>

@@ -191,7 +191,7 @@ export const SettingsView: React.FC = () => {
       {/* Header */}
       <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-xs">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#00236f] flex items-center justify-center">
+          <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#1e3a5f] flex items-center justify-center">
             <Settings className="w-4 h-4" />
           </div>
           <div>
@@ -262,7 +262,7 @@ export const SettingsView: React.FC = () => {
 
               {/* Upload & Clear buttons */}
               <div className="w-full space-y-2">
-                <label className="w-full h-9 px-3 rounded-xl bg-blue-50 hover:bg-blue-100 text-[#00236f] text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer transition-colors shadow-2xs">
+                <label className="w-full h-9 px-3 rounded-xl bg-blue-50 hover:bg-blue-100 text-[#1e3a5f] text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer transition-colors shadow-2xs">
                   <Upload className="w-3.5 h-3.5" />
                   <span>Importer une image (PNG / JPG)</span>
                   <input
@@ -302,7 +302,7 @@ export const SettingsView: React.FC = () => {
                       title={p.name}
                       className={`w-9 h-9 rounded-lg border p-0.5 overflow-hidden transition-all ${
                         logoPreview === p.url
-                          ? 'border-[#00236f] ring-2 ring-blue-300'
+                          ? 'border-[#1e3a5f] ring-2 ring-blue-300'
                           : 'border-slate-200 hover:border-slate-400 bg-white'
                       }`}
                     >
@@ -326,7 +326,7 @@ export const SettingsView: React.FC = () => {
                     value={schoolName}
                     onChange={(e) => setSchoolName(e.target.value)}
                     placeholder="ex: Collège Moderne de l'Est"
-                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs font-bold text-slate-900 focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs font-bold text-slate-900 focus:outline-none focus:border-[#1e3a5f]"
                   />
                 </div>
 
@@ -335,7 +335,7 @@ export const SettingsView: React.FC = () => {
                   <select
                     value={schoolType}
                     onChange={(e) => setSchoolType(e.target.value)}
-                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                   >
                     <option value="Collège">Collège</option>
                     <option value="Lycée">Lycée</option>
@@ -352,7 +352,7 @@ export const SettingsView: React.FC = () => {
                     value={schoolDirector}
                     onChange={(e) => setSchoolDirector(e.target.value)}
                     placeholder="Nom du Chef d'établissement"
-                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                   />
                 </div>
 
@@ -363,7 +363,7 @@ export const SettingsView: React.FC = () => {
                     value={schoolCity}
                     onChange={(e) => setSchoolCity(e.target.value)}
                     placeholder="Abidjan, Bouaké, San Pedro..."
-                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                   />
                 </div>
 
@@ -374,7 +374,7 @@ export const SettingsView: React.FC = () => {
                     value={schoolCommune}
                     onChange={(e) => setSchoolCommune(e.target.value)}
                     placeholder="Cocody, Yopougon, Plateau..."
-                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                   />
                 </div>
 
@@ -385,7 +385,7 @@ export const SettingsView: React.FC = () => {
                     value={schoolPhone}
                     onChange={(e) => setSchoolPhone(e.target.value)}
                     placeholder="+225 27 00 00 00 00"
-                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                   />
                 </div>
 
@@ -396,7 +396,7 @@ export const SettingsView: React.FC = () => {
                     value={schoolEmail}
                     onChange={(e) => setSchoolEmail(e.target.value)}
                     placeholder="direction@ecole.ci"
-                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                   />
                 </div>
 
@@ -409,7 +409,7 @@ export const SettingsView: React.FC = () => {
                     value={logoPreview.startsWith('data:') ? '' : logoPreview}
                     onChange={(e) => setLogoPreview(e.target.value)}
                     placeholder="https://mon-ecole.com/logo.png"
-                    className="w-full h-9 px-3 rounded-xl border border-slate-200 text-xs font-mono text-slate-600 focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-9 px-3 rounded-xl border border-slate-200 text-xs font-mono text-slate-600 focus:outline-none focus:border-[#1e3a5f]"
                   />
                   <span className="text-[10px] text-slate-400 mt-0.5 block">
                     Vous pouvez téléverser un fichier local (bouton à gauche) ou coller directement un lien web sécurisé.
@@ -421,7 +421,7 @@ export const SettingsView: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSavingIdentity}
-                  className="h-10 px-5 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center gap-2 shadow-xs transition-all active:scale-[0.98] disabled:opacity-50"
+                  className="h-10 px-5 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center gap-2 shadow-xs transition-all active:scale-[0.98] disabled:opacity-50"
                 >
                   <Check className="w-4 h-4" />
                   <span>{isSavingIdentity ? 'Enregistrement...' : 'Enregistrer l’Identité & le Logo'}</span>
@@ -436,12 +436,12 @@ export const SettingsView: React.FC = () => {
       <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm space-y-3">
         <div className="flex items-center justify-between border-b pb-3">
           <div className="flex items-center gap-2">
-            <Users className="w-4 h-4 text-[#00236f]" />
+            <Users className="w-4 h-4 text-[#1e3a5f]" />
             <h2 className="text-sm font-bold text-slate-900">
               Simulateur d'Espace &amp; Profils de Rôle
             </h2>
           </div>
-          <span className="text-xs bg-blue-50 text-[#00236f] font-bold px-2 py-0.5 rounded-full uppercase">
+          <span className="text-xs bg-blue-50 text-[#1e3a5f] font-bold px-2 py-0.5 rounded-full uppercase">
             Actif : {currentRole}
           </span>
         </div>
@@ -459,7 +459,7 @@ export const SettingsView: React.FC = () => {
                 onClick={() => switchRole(r.role)}
                 className={`p-3 rounded-xl border text-left transition-all ${
                   isSelected
-                    ? 'bg-[#00236f] text-white border-[#00236f] shadow-xs'
+                    ? 'bg-[#1e3a5f] text-white border-[#1e3a5f] shadow-xs'
                     : 'bg-slate-50/70 border-slate-200 text-slate-800 hover:bg-slate-100'
                 }`}
               >
@@ -519,7 +519,7 @@ export const SettingsView: React.FC = () => {
         <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm space-y-3 flex flex-col justify-between">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <Upload className="w-4 h-4 text-[#00236f]" />
+              <Upload className="w-4 h-4 text-[#1e3a5f]" />
               <h2 className="text-sm font-bold text-slate-900">Restauration depuis un Fichier JSON</h2>
             </div>
             <p className="text-xs text-slate-600 leading-relaxed">
@@ -532,7 +532,7 @@ export const SettingsView: React.FC = () => {
               type="file"
               accept=".json"
               onChange={handleFileChange}
-              className="w-full text-xs text-slate-500 file:mr-3 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-[#00236f] hover:file:bg-blue-100"
+              className="w-full text-xs text-slate-500 file:mr-3 file:py-2 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-[#1e3a5f] hover:file:bg-blue-100"
             />
             {importFile && (
               <span className="text-[11px] text-emerald-700 font-medium block">
@@ -544,7 +544,7 @@ export const SettingsView: React.FC = () => {
           <button
             onClick={handleImportSubmit}
             disabled={!importFile}
-            className="w-full h-11 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-xs transition-all disabled:opacity-50"
+            className="w-full h-11 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-xs transition-all disabled:opacity-50"
           >
             <Upload className="w-4 h-4" />
             <span>Restaurer les données</span>

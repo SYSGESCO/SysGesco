@@ -189,7 +189,7 @@ export const GradesView: React.FC = () => {
         <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-blue-50 text-[#00236f] flex items-center justify-center font-bold text-lg shadow-2xs">
+              <div className="w-10 h-10 rounded-2xl bg-blue-50 text-[#1e3a5f] flex items-center justify-center font-bold text-lg shadow-2xs">
                 <BookOpen className="w-5 h-5" />
               </div>
               <div>
@@ -197,7 +197,7 @@ export const GradesView: React.FC = () => {
                   <h1 className="text-base sm:text-lg font-bold text-slate-900">
                     Carnet de Notes &amp; Évaluations
                   </h1>
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-[#00236f] uppercase font-mono">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-[#1e3a5f] uppercase font-mono">
                     Trimestre 1
                   </span>
                 </div>
@@ -220,7 +220,7 @@ export const GradesView: React.FC = () => {
               </button>
               <button
                 onClick={() => setCurrentView('bulletins')}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#00236f] text-white text-xs font-semibold shadow-xs hover:bg-[#1e3a8a] transition-all"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#1e3a5f] text-white text-xs font-semibold shadow-xs hover:bg-[#1e3a8a] transition-all"
               >
                 <FileSpreadsheet className="w-3.5 h-3.5" />
                 <span>Bulletin Officiel</span>
@@ -239,7 +239,7 @@ export const GradesView: React.FC = () => {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4">
             <div className="p-3 rounded-xl bg-blue-50/60 border border-blue-100">
               <span className="text-[11px] font-bold text-slate-500 uppercase block">Moyenne Générale</span>
-              <div className="text-2xl font-extrabold text-[#00236f] font-mono mt-0.5">{overallAvg} / 20</div>
+              <div className="text-2xl font-extrabold text-[#1e3a5f] font-mono mt-0.5">{overallAvg} / 20</div>
               <span className="text-[10px] text-emerald-700 font-bold">Mention Bien</span>
             </div>
 
@@ -324,7 +324,7 @@ export const GradesView: React.FC = () => {
         )}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-3">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#00236f] flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#1e3a5f] flex items-center justify-center">
               <BookOpen className="w-4 h-4" />
             </div>
             <div>
@@ -442,14 +442,14 @@ export const GradesView: React.FC = () => {
       {/* Dynamic Summary Statistics Strip (Section 42) */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
         <div className="bg-white p-3 rounded-2xl border border-slate-100 shadow-xs flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#00236f] flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#1e3a5f] flex items-center justify-center">
             <TrendingUp className="w-5 h-5" />
           </div>
           <div>
             <span className="text-[10px] text-slate-400 font-semibold uppercase block">
               Moyenne Classe
             </span>
-            <span className="text-lg font-extrabold text-[#00236f] font-mono">{stats.avg} / 20</span>
+            <span className="text-lg font-extrabold text-[#1e3a5f] font-mono">{stats.avg} / 20</span>
           </div>
         </div>
 
@@ -494,7 +494,7 @@ export const GradesView: React.FC = () => {
       <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
         <div className="p-4 border-b border-slate-100 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <FileSpreadsheet className="w-4 h-4 text-[#00236f]" />
+            <FileSpreadsheet className="w-4 h-4 text-[#1e3a5f]" />
             <h3 className="text-sm font-bold text-slate-900">
               Liste d’évaluation des élèves ({classStudents.length})
             </h3>
@@ -563,7 +563,7 @@ export const GradesView: React.FC = () => {
                         value={entry.comment}
                         onChange={(e) => handleCommentChange(student.id, e.target.value)}
                         placeholder="Observation du professeur..."
-                        className="w-full h-8 px-2.5 rounded-lg border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                        className="w-full h-8 px-2.5 rounded-lg border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                       />
                     </td>
                   </tr>

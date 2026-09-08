@@ -471,91 +471,144 @@ export const AuthScreen: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-[#131b2e] flex flex-col justify-between py-6 px-4 sm:px-6">
-      {/* Top Banner & Offline Status */}
-      <header className="max-w-4xl mx-auto w-full">
-        <div className="w-full bg-white border border-slate-200/80 rounded-2xl px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 shadow-xs">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-[#00236f] text-white flex items-center justify-center font-extrabold text-sm tracking-wider">
+    <div className="min-h-screen bg-[#f5f7fa] text-[#131b2e] flex flex-col lg:flex-row antialiased">
+      {/* LEFT COLUMN (Desktop): Branding, Pitch & KPI Stats matching appmedo design */}
+      <div className="hidden lg:flex flex-col justify-between w-[440px] xl:w-[480px] bg-[#1e3a5f] text-white p-10 xl:p-12 shrink-0 select-none shadow-2xl relative overflow-hidden">
+        {/* Decorative background glow */}
+        <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-blue-500/10 blur-3xl pointer-events-none"></div>
+        <div className="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-amber-500/10 blur-3xl pointer-events-none"></div>
+
+        {/* Top: Logo & Title */}
+        <div className="relative z-10">
+          <div className="flex items-center gap-3">
+            <div className="w-11 h-11 rounded-xl bg-[#d97706] text-white flex items-center justify-center font-black text-base tracking-wider shadow-md">
               SG
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-extrabold text-sm text-[#00236f] tracking-wide">SYSGESCO</span>
-                <span className="text-[10px] font-semibold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full border border-emerald-200">
-                  ERP Scolaire CI
+                <span className="font-black text-xl tracking-tight text-white">SYSGESCO</span>
+                <span className="text-[10px] font-bold bg-amber-400/20 text-amber-300 px-2 py-0.5 rounded-full border border-amber-400/30">
+                  ERP CI
                 </span>
               </div>
-              <span className="text-[11px] text-slate-500 block leading-tight">
-                Côte d’Ivoire • Multi-Établissements • 100% Offline-First
+              <span className="text-xs text-blue-200/80 block font-medium">
+                Plateforme multi-établissements
               </span>
             </div>
           </div>
+        </div>
 
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5 text-slate-600 bg-slate-100 px-2.5 py-1 rounded-full text-xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span className="font-medium text-[11px]">Base locale active</span>
+        {/* Center: Pitch & Headline */}
+        <div className="relative z-10 my-auto py-8 space-y-5">
+          <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/10">
+            <GraduationCap className="w-7 h-7 text-amber-400" />
+          </div>
+
+          <div className="space-y-3">
+            <h1 className="text-2xl xl:text-3xl font-extrabold text-white leading-tight tracking-tight">
+              Gestion scolaire simple, rapide et maîtrisée.
+            </h1>
+            <p className="text-sm text-blue-100/80 leading-relaxed font-normal">
+              Gérez élèves, paiements, notes, bulletins et emplois du temps depuis un seul outil. Fonctionne hors connexion. Plusieurs établissements, un seul tableau de bord.
+            </p>
+          </div>
+
+          {/* 3 Metric Badges */}
+          <div className="grid grid-cols-3 gap-2.5 pt-4">
+            <div className="bg-white/10 backdrop-blur-xs rounded-xl p-3 border border-white/10 text-center">
+              <span className="block text-lg font-black text-white">21+</span>
+              <span className="text-[11px] text-blue-200 font-medium">Élèves</span>
+            </div>
+            <div className="bg-white/10 backdrop-blur-xs rounded-xl p-3 border border-white/10 text-center">
+              <span className="block text-lg font-black text-white">7</span>
+              <span className="text-[11px] text-blue-200 font-medium">Classes</span>
+            </div>
+            <div className="bg-white/10 backdrop-blur-xs rounded-xl p-3 border border-white/10 text-center">
+              <span className="block text-lg font-black text-white">8</span>
+              <span className="text-[11px] text-blue-200 font-medium">Professeurs</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom: Offline Guarantee */}
+        <div className="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-blue-200/80">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>100% Offline-First (Local)</span>
+          </div>
+          <span className="text-[11px] opacity-70">v2.4 CI</span>
+        </div>
+      </div>
+
+      {/* RIGHT COLUMN: Form & Multi-Establishment Registration */}
+      <div className="flex-1 min-w-0 flex flex-col justify-between py-6 px-4 sm:px-8 lg:px-12 overflow-y-auto">
+        {/* Mobile Header */}
+        <header className="lg:hidden w-full max-w-4xl mx-auto mb-4">
+          <div className="w-full bg-white border border-slate-200 rounded-2xl px-4 py-2.5 flex items-center justify-between shadow-2xs">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-[#d97706] text-white flex items-center justify-center font-extrabold text-sm tracking-wider">
+                SG
+              </div>
+              <span className="font-extrabold text-base text-[#1e3a5f] tracking-wide">SYSGESCO</span>
             </div>
             <PWAInstallButton compact />
           </div>
-        </div>
-      </header>
+        </header>
 
-      {/* Main Container */}
-      <main className="max-w-4xl mx-auto w-full my-4">
-        {/* Navigation Tabs (Connexion vs Inscription) */}
-        <div className="flex items-center justify-center mb-5">
-          <div className="bg-slate-200/80 p-1.5 rounded-2xl inline-flex gap-1 shadow-inner">
-            <button
-              id="tab-btn-login"
-              type="button"
-              onClick={() => setActiveTab('login')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
-                activeTab === 'login'
-                  ? 'bg-[#00236f] text-white shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
-              }`}
-            >
-              <LogIn className="w-4 h-4" />
-              <span>Espace Connexion</span>
-            </button>
-            <button
-              id="tab-btn-register"
-              type="button"
-              onClick={() => {
-                setActiveTab('register');
-                setRegStep(1);
-              }}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
-                activeTab === 'register'
-                  ? 'bg-[#00236f] text-white shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
-              }`}
-            >
-              <PlusCircle className="w-4 h-4" />
-              <span>Inscrire mon établissement</span>
-            </button>
+        {/* Main Content Area */}
+        <main className="w-full max-w-4xl mx-auto my-auto py-2">
+          {/* Navigation Tabs (Connexion vs Inscription) */}
+          <div className="flex items-center justify-center mb-6">
+            <div className="bg-slate-200/80 p-1 rounded-xl inline-flex gap-1 shadow-inner">
+              <button
+                id="tab-btn-login"
+                type="button"
+                onClick={() => setActiveTab('login')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+                  activeTab === 'login'
+                    ? 'bg-[#1e3a5f] text-white shadow-xs'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
+                }`}
+              >
+                <LogIn className="w-4 h-4" />
+                <span>Espace Connexion</span>
+              </button>
+              <button
+                id="tab-btn-register"
+                type="button"
+                onClick={() => {
+                  setActiveTab('register');
+                  setRegStep(1);
+                }}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+                  activeTab === 'register'
+                    ? 'bg-[#1e3a5f] text-white shadow-xs'
+                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
+                }`}
+              >
+                <PlusCircle className="w-4 h-4" />
+                <span>Inscrire mon établissement</span>
+              </button>
+            </div>
           </div>
-        </div>
 
-        {/* =================================================================== */}
-        {/* 1. ESPACE CONNEXION                                                 */}
-        {/* =================================================================== */}
-        {activeTab === 'login' && (
+          {/* =================================================================== */}
+          {/* 1. ESPACE CONNEXION                                                 */}
+          {/* =================================================================== */}
+          {activeTab === 'login' && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
             {/* Colonne Gauche : Formulaire de Connexion Strict */}
             <div className="lg:col-span-8 bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-slate-200/80 space-y-5">
               <div className="flex items-center justify-between border-b border-slate-100 pb-3.5">
                 <div>
-                  <h1 className="text-lg sm:text-xl font-extrabold text-[#00236f]">
+                  <h1 className="text-lg sm:text-xl font-extrabold text-[#1e3a5f]">
                     Connexion à votre espace dédié
                   </h1>
                   <p className="text-xs text-slate-500 mt-0.5">
                     Sélectionnez votre établissement, votre rôle et votre session scolaire
                   </p>
                 </div>
-                <div className="w-10 h-10 rounded-2xl bg-blue-50 text-[#00236f] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-2xl bg-blue-50 text-[#1e3a5f] flex items-center justify-center">
                   <Lock className="w-5 h-5" />
                 </div>
               </div>
@@ -586,7 +639,7 @@ export const AuthScreen: React.FC = () => {
                       id="select-institution"
                       value={selectedInstId}
                       onChange={(e) => handleInstitutionSelect(e.target.value)}
-                      className="w-full h-11 pl-10 pr-8 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 text-xs font-semibold focus:bg-white focus:border-[#00236f] focus:outline-none transition-all appearance-none cursor-pointer"
+                      className="w-full h-11 pl-10 pr-8 rounded-xl border border-slate-200 bg-slate-50 text-slate-900 text-xs font-semibold focus:bg-white focus:border-[#1e3a5f] focus:outline-none transition-all appearance-none cursor-pointer"
                     >
                       {filteredInstitutions.length === 0 && (
                         <option value="">Aucun établissement ne correspond aux filtres</option>
@@ -606,7 +659,7 @@ export const AuthScreen: React.FC = () => {
                 <div className="bg-slate-50/80 border border-slate-200/80 rounded-2xl p-3.5 space-y-2.5">
                   <div className="flex items-center justify-between">
                     <span className="text-[11px] font-bold text-slate-700 flex items-center gap-1.5 uppercase tracking-wider">
-                      <MapPin className="w-3.5 h-3.5 text-[#00236f]" />
+                      <MapPin className="w-3.5 h-3.5 text-[#1e3a5f]" />
                       Localisation Côte d’Ivoire (Filtre géographique)
                     </span>
                     {(filterCity !== 'Toutes les villes' || filterCommune !== 'Toutes les communes') && (
@@ -638,7 +691,7 @@ export const AuthScreen: React.FC = () => {
                           setFilterCommune('Toutes les communes');
                           setFilterQuartier('Tous les quartiers');
                         }}
-                        className="w-full h-9 px-2.5 rounded-lg border border-slate-200 bg-white text-slate-800 text-xs focus:border-[#00236f] focus:outline-none"
+                        className="w-full h-9 px-2.5 rounded-lg border border-slate-200 bg-white text-slate-800 text-xs focus:border-[#1e3a5f] focus:outline-none"
                       >
                         <option value="Toutes les villes">Toutes les villes (National)</option>
                         {allCities.map((city) => (
@@ -662,7 +715,7 @@ export const AuthScreen: React.FC = () => {
                           setFilterQuartier('Tous les quartiers');
                         }}
                         disabled={filterCity === 'Toutes les villes'}
-                        className="w-full h-9 px-2.5 rounded-lg border border-slate-200 bg-white text-slate-800 text-xs focus:border-[#00236f] focus:outline-none disabled:opacity-50"
+                        className="w-full h-9 px-2.5 rounded-lg border border-slate-200 bg-white text-slate-800 text-xs focus:border-[#1e3a5f] focus:outline-none disabled:opacity-50"
                       >
                         <option value="Toutes les communes">
                           {filterCity === 'Toutes les villes' ? 'Choisir une ville' : 'Toutes les communes'}
@@ -685,7 +738,7 @@ export const AuthScreen: React.FC = () => {
                         value={filterQuartier}
                         onChange={(e) => setFilterQuartier(e.target.value)}
                         disabled={filterCommune === 'Toutes les communes' || filterCity === 'Toutes les villes'}
-                        className="w-full h-9 px-2.5 rounded-lg border border-slate-200 bg-white text-slate-800 text-xs focus:border-[#00236f] focus:outline-none disabled:opacity-50"
+                        className="w-full h-9 px-2.5 rounded-lg border border-slate-200 bg-white text-slate-800 text-xs focus:border-[#1e3a5f] focus:outline-none disabled:opacity-50"
                       >
                         <option value="Tous les quartiers">
                           {filterCommune === 'Toutes les communes' ? 'Choisir une commune' : 'Tous les quartiers'}
@@ -716,7 +769,7 @@ export const AuthScreen: React.FC = () => {
                           onClick={() => handleRoleSelect(r.key)}
                           className={`p-2.5 rounded-xl border text-left transition-all flex flex-col justify-between ${
                             isSelected
-                              ? 'border-[#00236f] bg-[#f2f3ff] ring-2 ring-[#00236f]/20'
+                              ? 'border-[#1e3a5f] bg-[#f2f3ff] ring-2 ring-[#1e3a5f]/20'
                               : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50'
                           }`}
                         >
@@ -728,7 +781,7 @@ export const AuthScreen: React.FC = () => {
                               {r.key === 'student' && '🎒'}
                               {r.key === 'parent' && '👨‍👩‍👧'}
                             </span>
-                            {isSelected && <Check className="w-3.5 h-3.5 text-[#00236f]" />}
+                            {isSelected && <Check className="w-3.5 h-3.5 text-[#1e3a5f]" />}
                           </div>
                           <div>
                             <div className="font-bold text-xs text-slate-900 leading-tight">
@@ -755,7 +808,7 @@ export const AuthScreen: React.FC = () => {
                         id="select-academic-year"
                         value={selectedYear}
                         onChange={(e) => setSelectedYear(e.target.value)}
-                        className="w-full h-11 pl-9 pr-8 rounded-xl border border-slate-200 bg-slate-50 text-xs font-semibold text-slate-900 focus:bg-white focus:border-[#00236f] focus:outline-none appearance-none cursor-pointer"
+                        className="w-full h-11 pl-9 pr-8 rounded-xl border border-slate-200 bg-slate-50 text-xs font-semibold text-slate-900 focus:bg-white focus:border-[#1e3a5f] focus:outline-none appearance-none cursor-pointer"
                       >
                         {ACADEMIC_YEARS.map((yr) => (
                           <option key={yr} value={yr}>
@@ -783,7 +836,7 @@ export const AuthScreen: React.FC = () => {
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         placeholder="Identifiant ou matricule"
-                        className="w-full h-11 pl-9 pr-3 rounded-xl border border-slate-200 bg-slate-50 text-xs font-semibold text-slate-900 focus:bg-white focus:border-[#00236f] focus:outline-none transition-all"
+                        className="w-full h-11 pl-9 pr-3 rounded-xl border border-slate-200 bg-slate-50 text-xs font-semibold text-slate-900 focus:bg-white focus:border-[#1e3a5f] focus:outline-none transition-all"
                       />
                       <User className="w-4 h-4 text-slate-400 absolute left-3 top-3.5 pointer-events-none" />
                     </div>
@@ -804,7 +857,7 @@ export const AuthScreen: React.FC = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="••••••••"
-                        className="w-full h-11 pl-9 pr-10 rounded-xl border border-slate-200 bg-slate-50 text-xs font-semibold text-slate-900 focus:bg-white focus:border-[#00236f] focus:outline-none transition-all font-mono"
+                        className="w-full h-11 pl-9 pr-10 rounded-xl border border-slate-200 bg-slate-50 text-xs font-semibold text-slate-900 focus:bg-white focus:border-[#1e3a5f] focus:outline-none transition-all font-mono"
                       />
                       <Lock className="w-4 h-4 text-slate-400 absolute left-3 top-3.5 pointer-events-none" />
                       <button
@@ -822,7 +875,7 @@ export const AuthScreen: React.FC = () => {
                 {roleUsersInSelectedSchool.length > 0 && (
                   <div className="p-2.5 rounded-xl bg-blue-50/60 border border-blue-100 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-2 text-slate-600 text-[11px]">
-                      <Info className="w-3.5 h-3.5 text-[#00236f]" />
+                      <Info className="w-3.5 h-3.5 text-[#1e3a5f]" />
                       <span>Comptes {selectedRole} enregistrés :</span>
                     </div>
                     <div className="flex flex-wrap gap-1.5">
@@ -834,7 +887,7 @@ export const AuthScreen: React.FC = () => {
                             setUsername(u.username);
                             if (u.passwordHash) setPassword(u.passwordHash);
                           }}
-                          className="px-2 py-0.5 rounded-md bg-white border border-blue-200 text-[#00236f] text-[10px] font-bold hover:bg-blue-100 transition-colors"
+                          className="px-2 py-0.5 rounded-md bg-white border border-blue-200 text-[#1e3a5f] text-[10px] font-bold hover:bg-blue-100 transition-colors"
                         >
                           {u.username} ({u.firstName})
                         </button>
@@ -848,7 +901,7 @@ export const AuthScreen: React.FC = () => {
                   id="btn-submit-login"
                   type="submit"
                   disabled={loginLoading}
-                  className="w-full h-12 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.99] disabled:opacity-50 mt-2"
+                  className="w-full h-12 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.99] disabled:opacity-50 mt-2"
                 >
                   <LogIn className="w-4 h-4" />
                   <span>
@@ -870,7 +923,7 @@ export const AuthScreen: React.FC = () => {
                   <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
                     Établissement sélectionné
                   </span>
-                  <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-[#00236f]">
+                  <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-[#1e3a5f]">
                     {currentSelectedInstitution?.type || 'Scolaire'}
                   </span>
                 </div>
@@ -882,7 +935,7 @@ export const AuthScreen: React.FC = () => {
                     </h2>
                     <div className="text-xs text-slate-500 space-y-1">
                       <div className="flex items-center gap-2">
-                        <span className="font-mono font-bold text-[#00236f] bg-slate-100 px-2 py-0.5 rounded text-[11px]">
+                        <span className="font-mono font-bold text-[#1e3a5f] bg-slate-100 px-2 py-0.5 rounded text-[11px]">
                           {currentSelectedInstitution.code}
                         </span>
                         <span>{currentSelectedInstitution.academicYear}</span>
@@ -929,9 +982,9 @@ export const AuthScreen: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => launchDemo('direction')}
-                    className="p-2 bg-white rounded-xl text-left border border-slate-200/80 hover:border-[#00236f] transition-all"
+                    className="p-2 bg-white rounded-xl text-left border border-slate-200/80 hover:border-[#1e3a5f] transition-all"
                   >
-                    <div className="font-bold text-[#00236f]">Directeur</div>
+                    <div className="font-bold text-[#1e3a5f]">Directeur</div>
                     <div className="text-[10px] text-slate-400">admin / admin123</div>
                   </button>
                   <button
@@ -972,7 +1025,7 @@ export const AuthScreen: React.FC = () => {
                     setActiveTab('register');
                     setRegStep(1);
                   }}
-                  className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-[#00236f] font-bold text-xs transition-colors flex items-center justify-center gap-1.5"
+                  className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-[#1e3a5f] font-bold text-xs transition-colors flex items-center justify-center gap-1.5"
                 >
                   <PlusCircle className="w-4 h-4" />
                   <span>Créer un nouvel établissement</span>
@@ -1014,11 +1067,11 @@ export const AuthScreen: React.FC = () => {
             {/* Stepper */}
             <div className="grid grid-cols-3 gap-2">
               <div className="space-y-1">
-                <div className={`h-1.5 rounded-full ${regStep >= 1 ? 'bg-[#00236f]' : 'bg-slate-200'}`}></div>
+                <div className={`h-1.5 rounded-full ${regStep >= 1 ? 'bg-[#1e3a5f]' : 'bg-slate-200'}`}></div>
                 <span className="text-[10px] font-bold text-slate-500 block text-center">1. Établissement</span>
               </div>
               <div className="space-y-1">
-                <div className={`h-1.5 rounded-full ${regStep >= 2 ? 'bg-[#00236f]' : 'bg-slate-200'}`}></div>
+                <div className={`h-1.5 rounded-full ${regStep >= 2 ? 'bg-[#1e3a5f]' : 'bg-slate-200'}`}></div>
                 <span className="text-[10px] font-bold text-slate-500 block text-center">2. Les 5 Rôles</span>
               </div>
               <div className="space-y-1">
@@ -1037,7 +1090,7 @@ export const AuthScreen: React.FC = () => {
             {regStep === 1 && (
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-extrabold text-[#00236f] uppercase tracking-wider block">
+                  <span className="text-xs font-extrabold text-[#1e3a5f] uppercase tracking-wider block">
                     Étape 1 — Coordonnées de l'établissement
                   </span>
                   <span className="text-[11px] text-slate-400">Informations administratives</span>
@@ -1054,7 +1107,7 @@ export const AuthScreen: React.FC = () => {
                     value={regSchoolName}
                     onChange={(e) => setRegSchoolName(e.target.value)}
                     placeholder="ex: Collège Moderne de l'Avenir"
-                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:bg-white focus:border-[#00236f] focus:outline-none"
+                    className="w-full h-11 px-3.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:bg-white focus:border-[#1e3a5f] focus:outline-none"
                   />
                 </div>
 
@@ -1066,7 +1119,7 @@ export const AuthScreen: React.FC = () => {
                     <select
                       value={regSchoolType}
                       onChange={(e) => setRegSchoolType(e.target.value)}
-                      className="w-full h-11 px-3 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:bg-white focus:border-[#00236f] focus:outline-none"
+                      className="w-full h-11 px-3 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:bg-white focus:border-[#1e3a5f] focus:outline-none"
                     >
                       <option value="Collège">Collège</option>
                       <option value="Lycée">Lycée</option>
@@ -1085,7 +1138,7 @@ export const AuthScreen: React.FC = () => {
                     <select
                       value={regAcademicYear}
                       onChange={(e) => setRegAcademicYear(e.target.value)}
-                      className="w-full h-11 px-3 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:bg-white focus:border-[#00236f] focus:outline-none"
+                      className="w-full h-11 px-3 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:bg-white focus:border-[#1e3a5f] focus:outline-none"
                     >
                       {ACADEMIC_YEARS.map((y) => (
                         <option key={y} value={y}>
@@ -1099,7 +1152,7 @@ export const AuthScreen: React.FC = () => {
                 {/* Localisation Côte d'Ivoire */}
                 <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 space-y-3">
                   <span className="text-[11px] font-bold text-slate-700 flex items-center gap-1.5 uppercase tracking-wider">
-                    <MapPin className="w-3.5 h-3.5 text-[#00236f]" />
+                    <MapPin className="w-3.5 h-3.5 text-[#1e3a5f]" />
                     Localisation en Côte d’Ivoire
                   </span>
 
@@ -1111,7 +1164,7 @@ export const AuthScreen: React.FC = () => {
                       <select
                         value={regCity}
                         onChange={(e) => handleRegCityChange(e.target.value)}
-                        className="w-full h-10 px-2.5 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                        className="w-full h-10 px-2.5 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                       >
                         {allCities.map((city) => (
                           <option key={city} value={city}>
@@ -1128,7 +1181,7 @@ export const AuthScreen: React.FC = () => {
                       <select
                         value={regCommune}
                         onChange={(e) => handleRegCommuneChange(e.target.value)}
-                        className="w-full h-10 px-2.5 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                        className="w-full h-10 px-2.5 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                       >
                         {regCommunes.map((comm) => (
                           <option key={comm.name} value={comm.name}>
@@ -1145,7 +1198,7 @@ export const AuthScreen: React.FC = () => {
                       <select
                         value={regQuartier}
                         onChange={(e) => setRegQuartier(e.target.value)}
-                        className="w-full h-10 px-2.5 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                        className="w-full h-10 px-2.5 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                       >
                         {regQuartiers.map((q) => (
                           <option key={q} value={q}>
@@ -1165,7 +1218,7 @@ export const AuthScreen: React.FC = () => {
                       value={regAddress}
                       onChange={(e) => setRegAddress(e.target.value)}
                       placeholder="ex: Boulevard des Martyrs, près de la pharmacie"
-                      className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                      className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                     />
                   </div>
                 </div>
@@ -1180,7 +1233,7 @@ export const AuthScreen: React.FC = () => {
                       value={regPhone}
                       onChange={(e) => setRegPhone(e.target.value)}
                       placeholder="+225 27 00 00 00 00"
-                      className="w-full h-11 px-3.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:bg-white focus:border-[#00236f] focus:outline-none"
+                      className="w-full h-11 px-3.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:bg-white focus:border-[#1e3a5f] focus:outline-none"
                     />
                   </div>
                   <div>
@@ -1192,7 +1245,7 @@ export const AuthScreen: React.FC = () => {
                       value={regEmail}
                       onChange={(e) => setRegEmail(e.target.value)}
                       placeholder="direction@ecole.ci"
-                      className="w-full h-11 px-3.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:bg-white focus:border-[#00236f] focus:outline-none"
+                      className="w-full h-11 px-3.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-900 focus:bg-white focus:border-[#1e3a5f] focus:outline-none"
                     />
                   </div>
                 </div>
@@ -1201,7 +1254,7 @@ export const AuthScreen: React.FC = () => {
                   id="btn-step1-next"
                   type="button"
                   onClick={handleStep1Next}
-                  className="w-full h-12 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 mt-2 shadow-sm transition-all"
+                  className="w-full h-12 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 mt-2 shadow-sm transition-all"
                 >
                   <span>Passer à l'inscription des 5 rôles</span>
                   <ArrowRight className="w-4 h-4" />
@@ -1214,7 +1267,7 @@ export const AuthScreen: React.FC = () => {
               <form onSubmit={handleRegisterSubmit} className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-xs font-extrabold text-[#00236f] uppercase tracking-wider block">
+                    <span className="text-xs font-extrabold text-[#1e3a5f] uppercase tracking-wider block">
                       Étape 2 — Inscription obligatoire des 5 Rôles
                     </span>
                     <span className="text-[11px] text-slate-500">
@@ -1240,7 +1293,7 @@ export const AuthScreen: React.FC = () => {
                       onClick={() => setActiveRegRoleTab(r.key)}
                       className={`flex-1 py-2 px-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
                         activeRegRoleTab === r.key
-                          ? 'bg-white text-[#00236f] shadow-xs'
+                          ? 'bg-white text-[#1e3a5f] shadow-xs'
                           : 'text-slate-600 hover:text-slate-900'
                       }`}
                     >
@@ -1259,7 +1312,7 @@ export const AuthScreen: React.FC = () => {
                 {/* 1. DIRECTEUR */}
                 {activeRegRoleTab === 'direction' && (
                   <div className="p-4 rounded-2xl border border-blue-100 bg-blue-50/30 space-y-3">
-                    <div className="flex items-center gap-2 text-[#00236f] font-bold text-xs">
+                    <div className="flex items-center gap-2 text-[#1e3a5f] font-bold text-xs">
                       <GraduationCap className="w-4 h-4" />
                       <span>Rôle Directeur — Administrateur Général de l'établissement</span>
                     </div>
@@ -1274,7 +1327,7 @@ export const AuthScreen: React.FC = () => {
                         value={dirFullName}
                         onChange={(e) => setDirFullName(e.target.value)}
                         placeholder="ex: Dr. KOUASSI Jérôme"
-                        className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                        className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                       />
                     </div>
 
@@ -1288,7 +1341,7 @@ export const AuthScreen: React.FC = () => {
                           value={dirPhone}
                           onChange={(e) => setDirPhone(e.target.value)}
                           placeholder="+225 07 48 22 90"
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                         />
                       </div>
                       <div>
@@ -1300,7 +1353,7 @@ export const AuthScreen: React.FC = () => {
                           value={dirEmail}
                           onChange={(e) => setDirEmail(e.target.value)}
                           placeholder="directeur@ecole.ci"
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                         />
                       </div>
                     </div>
@@ -1316,7 +1369,7 @@ export const AuthScreen: React.FC = () => {
                           value={dirUsername}
                           onChange={(e) => setDirUsername(e.target.value)}
                           placeholder="ex: directeur"
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none font-mono"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none font-mono"
                         />
                       </div>
                       <div>
@@ -1329,7 +1382,7 @@ export const AuthScreen: React.FC = () => {
                           value={dirPassword}
                           onChange={(e) => setDirPassword(e.target.value)}
                           placeholder="••••••••"
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none font-mono"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none font-mono"
                         />
                       </div>
                     </div>
@@ -1354,7 +1407,7 @@ export const AuthScreen: React.FC = () => {
                         value={cashierFullName}
                         onChange={(e) => setCashierFullName(e.target.value)}
                         placeholder="ex: Mme KOFFI Aminata"
-                        className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                        className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                       />
                     </div>
 
@@ -1367,7 +1420,7 @@ export const AuthScreen: React.FC = () => {
                         value={cashierPhone}
                         onChange={(e) => setCashierPhone(e.target.value)}
                         placeholder="+225 05 06 14 78 20"
-                        className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                        className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                       />
                     </div>
 
@@ -1382,7 +1435,7 @@ export const AuthScreen: React.FC = () => {
                           value={cashierUsername}
                           onChange={(e) => setCashierUsername(e.target.value)}
                           placeholder="ex: caisse"
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none font-mono"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none font-mono"
                         />
                       </div>
                       <div>
@@ -1395,7 +1448,7 @@ export const AuthScreen: React.FC = () => {
                           value={cashierPassword}
                           onChange={(e) => setCashierPassword(e.target.value)}
                           placeholder="••••••••"
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none font-mono"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none font-mono"
                         />
                       </div>
                     </div>
@@ -1421,7 +1474,7 @@ export const AuthScreen: React.FC = () => {
                           value={teacherFullName}
                           onChange={(e) => setTeacherFullName(e.target.value)}
                           placeholder="ex: M. BAMBA Souleymane"
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                         />
                       </div>
                       <div>
@@ -1431,7 +1484,7 @@ export const AuthScreen: React.FC = () => {
                         <select
                           value={teacherSubject}
                           onChange={(e) => setTeacherSubject(e.target.value)}
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                         >
                           <option value="Mathématiques">Mathématiques</option>
                           <option value="Français">Français</option>
@@ -1456,7 +1509,7 @@ export const AuthScreen: React.FC = () => {
                           value={teacherUsername}
                           onChange={(e) => setTeacherUsername(e.target.value)}
                           placeholder="ex: prof_maths"
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none font-mono"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none font-mono"
                         />
                       </div>
                       <div>
@@ -1469,7 +1522,7 @@ export const AuthScreen: React.FC = () => {
                           value={teacherPassword}
                           onChange={(e) => setTeacherPassword(e.target.value)}
                           placeholder="••••••••"
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none font-mono"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none font-mono"
                         />
                       </div>
                     </div>
@@ -1495,7 +1548,7 @@ export const AuthScreen: React.FC = () => {
                           value={studentFullName}
                           onChange={(e) => setStudentFullName(e.target.value)}
                           placeholder="ex: DIALLO Fatou"
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                         />
                       </div>
                       <div>
@@ -1505,7 +1558,7 @@ export const AuthScreen: React.FC = () => {
                         <select
                           value={studentGender}
                           onChange={(e) => setStudentGender(e.target.value as 'M' | 'F')}
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                         >
                           <option value="F">Féminin (F)</option>
                           <option value="M">Masculin (M)</option>
@@ -1524,7 +1577,7 @@ export const AuthScreen: React.FC = () => {
                           value={studentMatricule}
                           onChange={(e) => setStudentMatricule(e.target.value)}
                           placeholder="ex: MAT-2026-001"
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none font-mono uppercase"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none font-mono uppercase"
                         />
                       </div>
                       <div>
@@ -1537,7 +1590,7 @@ export const AuthScreen: React.FC = () => {
                           value={studentPassword}
                           onChange={(e) => setStudentPassword(e.target.value)}
                           placeholder="••••••••"
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none font-mono"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none font-mono"
                         />
                       </div>
                     </div>
@@ -1562,7 +1615,7 @@ export const AuthScreen: React.FC = () => {
                         value={parentFullName}
                         onChange={(e) => setParentFullName(e.target.value)}
                         placeholder="ex: M. DIALLO Mamadou"
-                        className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                        className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                       />
                     </div>
 
@@ -1576,7 +1629,7 @@ export const AuthScreen: React.FC = () => {
                         value={parentPhone}
                         onChange={(e) => setParentPhone(e.target.value)}
                         placeholder="+225 07 11 22 33 44"
-                        className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none"
+                        className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none"
                       />
                     </div>
 
@@ -1591,7 +1644,7 @@ export const AuthScreen: React.FC = () => {
                           value={parentUsername}
                           onChange={(e) => setParentUsername(e.target.value)}
                           placeholder="ex: parent"
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none font-mono"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none font-mono"
                         />
                       </div>
                       <div>
@@ -1604,7 +1657,7 @@ export const AuthScreen: React.FC = () => {
                           value={parentPassword}
                           onChange={(e) => setParentPassword(e.target.value)}
                           placeholder="••••••••"
-                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#00236f] focus:outline-none font-mono"
+                          className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-xs text-slate-900 focus:border-[#1e3a5f] focus:outline-none font-mono"
                         />
                       </div>
                     </div>
@@ -1659,7 +1712,7 @@ export const AuthScreen: React.FC = () => {
                     Identifiant Établissement Unique
                   </span>
                   <div className="flex items-center gap-2">
-                    <span className="text-2xl font-mono font-extrabold text-[#00236f] tracking-wider">
+                    <span className="text-2xl font-mono font-extrabold text-[#1e3a5f] tracking-wider">
                       {generatedCode}
                     </span>
                     <button
@@ -1685,7 +1738,7 @@ export const AuthScreen: React.FC = () => {
                   </span>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                     <div className="p-2.5 bg-white rounded-xl border border-slate-200">
-                      <div className="font-bold text-[#00236f] flex items-center gap-1.5">
+                      <div className="font-bold text-[#1e3a5f] flex items-center gap-1.5">
                         <span>🎓 Directeur</span>
                       </div>
                       <div className="text-slate-600 text-[11px]">Login : <strong>{dirUsername}</strong></div>
@@ -1730,7 +1783,7 @@ export const AuthScreen: React.FC = () => {
                     setPassword(dirPassword);
                     setSelectedRole('direction');
                   }}
-                  className="w-full h-12 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-all"
+                  className="w-full h-12 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-all"
                 >
                   <LogIn className="w-4 h-4" />
                   <span>Se connecter avec cet établissement</span>
@@ -1739,12 +1792,13 @@ export const AuthScreen: React.FC = () => {
             )}
           </div>
         )}
-      </main>
+        </main>
 
-      {/* Footer */}
-      <footer className="max-w-4xl mx-auto w-full text-center text-xs text-slate-400 pt-2">
-        SysGesco ERP Scolaire Côte d’Ivoire • Données stockées localement en toute sécurité
-      </footer>
+        {/* Footer */}
+        <footer className="max-w-4xl mx-auto w-full text-center text-xs text-slate-400 py-3">
+          SysGesco ERP Scolaire Côte d’Ivoire • Données stockées localement en toute sécurité
+        </footer>
+      </div>
     </div>
   );
 };

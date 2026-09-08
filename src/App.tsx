@@ -1,14 +1,15 @@
 /**
  * SysGesco - ERP de Gestion Scolaire Offline-First Multi-Établissements
- * Scolarité • Caisse FCFA • Notes & Bulletins • Emplois du Temps • Assiduité
+ * Interface inspirée de SysGesco AppMedo : Sidebar sombre, barre d'en-tête épurée, recherche globale
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { AppProvider, useApp } from './context/AppContext';
 import { AuthScreen } from './components/auth/AuthScreen';
 import { Header } from './components/layout/Header';
-import { Navigation } from './components/layout/Navigation';
+import { Sidebar } from './components/layout/Sidebar';
 import { Toast } from './components/common/Toast';
+import { X } from 'lucide-react';
 
 import { DashboardView } from './components/dashboard/DashboardView';
 import { StudentsView } from './components/students/StudentsView';
@@ -26,19 +27,23 @@ import { SuperAdminView } from './components/superadmin/SuperAdminView';
 
 const MainLayout: React.FC = () => {
   const { currentUser, activeInstitution, currentView, isLoading } = useApp();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-[#faf8ff] flex flex-col items-center justify-center p-4 space-y-3">
-        <div className="w-12 h-12 rounded-2xl bg-[#00236f] text-white flex items-center justify-center animate-pulse shadow-md">
-          <span className="font-extrabold text-sm tracking-wider">SG</span>
+      <div className="min-h-screen bg-[#f5f7fa] flex flex-col items-center justify-center p-4 space-y-4">
+        <div className="w-12 h-12 rounded-xl bg-[#1e3a5f] text-white flex items-center justify-center shadow-lg animate-pulse">
+          <span className="font-black text-base tracking-wider text-amber-400">SG</span>
         </div>
-        <p className="text-xs font-semibold text-slate-600">Chargement de la base locale SysGesco...</p>
+        <div className="flex flex-col items-center">
+          <p className="text-sm font-bold text-slate-800">SysGesco</p>
+          <p className="text-xs text-slate-500">Chargement de votre espace de travail...</p>
+        </div>
       </div>
     );
   }
 
-  // Not authenticated -> show entry screen (Section 7-12)
+  // Not authenticated -> show entry screen
   if (!currentUser || !activeInstitution) {
     return <AuthScreen />;
   }
@@ -77,13 +82,49 @@ const MainLayout: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#faf8ff] text-[#131b2e] flex flex-col font-sans selection:bg-[#00236f] selection:text-white pb-20 md:pb-6">
-      <Header />
-      <Navigation />
+    <div className="flex h-screen w-full bg-[#f5f7fa] text-[#0f1d30] overflow-hidden antialiased">
+      {/* 1. Desktop Left Sidebar */}
+      <aside className="hidden md:flex flex-col w-64 shrink-0 h-full">
+        <Sidebar />
+      </aside>
 
-      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 pt-4 sm:pt-6">
-        {renderView()}
-      </main>
+      {/* 2. Mobile Slide-out Drawer */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-50 flex md:hidden">
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+
+          {/* Drawer Panel */}
+          <div className="relative flex-1 flex flex-col max-w-xs w-full bg-[#192333] shadow-2xl z-10 animate-in slide-in-from-left duration-200">
+            <div className="absolute top-3 right-3 z-20">
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center h-8 w-8 rounded-full bg-[#243248] text-white hover:bg-slate-700 transition-colors"
+                aria-label="Fermer le menu"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+            <Sidebar onClose={() => setMobileMenuOpen(false)} />
+          </div>
+        </div>
+      )}
+
+      {/* 3. Main Column (Header + Content) */}
+      <div className="flex-1 min-w-0 flex flex-col h-full overflow-hidden">
+        {/* Sticky Top Header */}
+        <Header onMenuClick={() => setMobileMenuOpen(true)} />
+
+        {/* Scrollable Main Application Content */}
+        <main className="flex-1 min-w-0 overflow-x-hidden overflow-y-auto p-3 sm:p-5 lg:p-6 bg-[#f5f7fa]">
+          <div className="max-w-7xl mx-auto w-full space-y-6">
+            {renderView()}
+          </div>
+        </main>
+      </div>
 
       <Toast />
     </div>

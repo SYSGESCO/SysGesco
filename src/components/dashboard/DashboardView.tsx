@@ -170,7 +170,7 @@ export const DashboardView: React.FC = () => {
 
             <button
               onClick={() => setCurrentView('grades')}
-              className="flex items-center gap-2.5 p-3 rounded-xl bg-[#00236f] text-white shadow-xs hover:bg-[#1e3a8a] active:scale-[0.98] transition-all text-left"
+              className="flex items-center gap-2.5 p-3 rounded-xl bg-[#1e3a5f] text-white shadow-xs hover:bg-[#1e3a8a] active:scale-[0.98] transition-all text-left"
             >
               <div className="w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center shrink-0">
                 <FileEdit className="w-4 h-4" />
@@ -198,7 +198,7 @@ export const DashboardView: React.FC = () => {
               onClick={() => setCurrentView('timetable')}
               className="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-xs hover:bg-slate-50 active:scale-[0.98] transition-all text-left"
             >
-              <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#00236f] flex items-center justify-center shrink-0">
+              <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#1e3a5f] flex items-center justify-center shrink-0">
                 <Calendar className="w-4 h-4" />
               </div>
               <div className="min-w-0">
@@ -234,7 +234,7 @@ export const DashboardView: React.FC = () => {
 
           <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-xs">
             <span className="text-[11px] font-bold text-slate-400 uppercase block">Total Élèves</span>
-            <div className="text-2xl font-extrabold text-[#00236f] mt-1">{teacherStudents.length || 78}</div>
+            <div className="text-2xl font-extrabold text-[#1e3a5f] mt-1">{teacherStudents.length || 78}</div>
             <p className="text-[11px] text-slate-500 mt-0.5">Sur l'ensemble des niveaux</p>
           </div>
 
@@ -287,7 +287,7 @@ export const DashboardView: React.FC = () => {
 
             <div className="py-2.5 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <span className="text-xs font-mono font-bold bg-blue-50 text-[#00236f] px-2.5 py-1 rounded-lg">
+                <span className="text-xs font-mono font-bold bg-blue-50 text-[#1e3a5f] px-2.5 py-1 rounded-lg">
                   10h15 - 12h15
                 </span>
                 <div>
@@ -312,7 +312,7 @@ export const DashboardView: React.FC = () => {
     return (
       <div className="space-y-4 pb-12">
         {/* Banner Student */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#00236f] to-blue-900 text-white p-5 shadow-xs">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#1e3a5f] to-blue-900 text-white p-5 shadow-xs">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="space-y-1">
               <div className="flex items-center gap-2">
@@ -335,7 +335,7 @@ export const DashboardView: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-2 shrink-0">
-              <span className="text-xs font-bold bg-white text-[#00236f] px-3 py-1.5 rounded-xl shadow-xs">
+              <span className="text-xs font-bold bg-white text-[#1e3a5f] px-3 py-1.5 rounded-xl shadow-xs">
                 Année {activeInstitution?.academicYear}
               </span>
             </div>
@@ -352,7 +352,7 @@ export const DashboardView: React.FC = () => {
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
             <button
               onClick={() => setCurrentView('grades')}
-              className="flex items-center gap-2.5 p-3 rounded-xl bg-[#00236f] text-white shadow-xs hover:bg-[#1e3a8a] active:scale-[0.98] transition-all text-left"
+              className="flex items-center gap-2.5 p-3 rounded-xl bg-[#1e3a5f] text-white shadow-xs hover:bg-[#1e3a8a] active:scale-[0.98] transition-all text-left"
             >
               <div className="w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center shrink-0">
                 <BookOpen className="w-4 h-4" />
@@ -393,7 +393,7 @@ export const DashboardView: React.FC = () => {
               onClick={() => setCurrentView('timetable')}
               className="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-xs hover:bg-slate-50 active:scale-[0.98] transition-all text-left"
             >
-              <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#00236f] flex items-center justify-center shrink-0">
+              <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#1e3a5f] flex items-center justify-center shrink-0">
                 <Calendar className="w-4 h-4" />
               </div>
               <div className="min-w-0">
@@ -424,7 +424,7 @@ export const DashboardView: React.FC = () => {
               <span className="text-[11px] font-bold text-slate-400 uppercase">Moyenne T1</span>
               <Award className="w-4 h-4" />
             </div>
-            <div className="text-2xl font-extrabold text-[#00236f] font-mono">15.42 / 20</div>
+            <div className="text-2xl font-extrabold text-[#1e3a5f] font-mono">15.42 / 20</div>
             <p className="text-[11px] text-emerald-700 font-bold mt-0.5">2e de la classe • Bien</p>
           </div>
 
@@ -465,7 +465,7 @@ export const DashboardView: React.FC = () => {
             </div>
             <button
               onClick={() => setCurrentView('homework')}
-              className="text-xs text-[#00236f] font-bold hover:underline"
+              className="text-xs text-[#1e3a5f] font-bold hover:underline"
             >
               Ouvrir le cahier de textes &rarr;
             </button>
@@ -474,7 +474,7 @@ export const DashboardView: React.FC = () => {
           <div className="divide-y divide-slate-100">
             <div className="py-2.5 flex items-start justify-between gap-3">
               <div>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-[#00236f] uppercase">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-[#1e3a5f] uppercase">
                   Mathématiques
                 </span>
                 <p className="text-xs font-bold text-slate-900 mt-1">
@@ -582,7 +582,7 @@ export const DashboardView: React.FC = () => {
               onClick={() => setCurrentView('grades')}
               className="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-xs hover:bg-slate-50 active:scale-[0.98] transition-all text-left"
             >
-              <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#00236f] flex items-center justify-center shrink-0">
+              <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#1e3a5f] flex items-center justify-center shrink-0">
                 <BookOpen className="w-4 h-4" />
               </div>
               <div className="min-w-0">
@@ -708,7 +708,7 @@ export const DashboardView: React.FC = () => {
             onClick={() => setCurrentView('students')}
             className="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-xs hover:bg-slate-50 transition-all text-left"
           >
-            <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#00236f] flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#1e3a5f] flex items-center justify-center shrink-0">
               <Users className="w-4 h-4" />
             </div>
             <div className="min-w-0">
@@ -748,7 +748,7 @@ export const DashboardView: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-xs space-y-2">
             <span className="text-xs font-bold text-slate-400 uppercase">Total Encaissé</span>
-            <div className="text-3xl font-extrabold text-[#00236f] font-mono">
+            <div className="text-3xl font-extrabold text-[#1e3a5f] font-mono">
               {(totalCollected || 0).toLocaleString('fr-FR')} FCFA
             </div>
             <span className="text-xs text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full inline-block">
@@ -777,12 +777,12 @@ export const DashboardView: React.FC = () => {
         <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-[#00236f]" />
+              <Clock className="w-4 h-4 text-[#1e3a5f]" />
               <h3 className="text-sm font-bold text-slate-900">Derniers Encaissements au Guichet</h3>
             </div>
             <button
               onClick={() => setCurrentView('cashier')}
-              className="text-xs text-[#00236f] font-bold hover:underline"
+              className="text-xs text-[#1e3a5f] font-bold hover:underline"
             >
               Historique complet &rarr;
             </button>
@@ -832,11 +832,11 @@ export const DashboardView: React.FC = () => {
                 {activeInstitution?.code}
               </span>
               <span className="w-1 h-1 rounded-full bg-slate-300"></span>
-              <span className="text-[11px] font-semibold text-[#00236f]">
+              <span className="text-[11px] font-semibold text-[#1e3a5f]">
                 Session {activeInstitution?.academicYear}
               </span>
             </div>
-            <h1 className="text-xl sm:text-2xl font-extrabold text-[#00236f] tracking-tight">
+            <h1 className="text-xl sm:text-2xl font-extrabold text-[#1e3a5f] tracking-tight">
               {activeInstitution?.name}
             </h1>
             <p className="text-xs text-slate-600 flex items-center gap-1.5">
@@ -879,7 +879,7 @@ export const DashboardView: React.FC = () => {
 
           <button
             onClick={() => setCurrentView('students')}
-            className="flex items-center gap-2.5 p-3 rounded-xl bg-[#00236f] text-white shadow-xs hover:bg-[#1e3a8a] active:scale-[0.98] transition-all text-left"
+            className="flex items-center gap-2.5 p-3 rounded-xl bg-[#1e3a5f] text-white shadow-xs hover:bg-[#1e3a8a] active:scale-[0.98] transition-all text-left"
           >
             <div className="w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center shrink-0">
               <PlusCircle className="w-4 h-4" />
@@ -894,7 +894,7 @@ export const DashboardView: React.FC = () => {
             onClick={() => setCurrentView('grades')}
             className="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-slate-200 text-slate-800 shadow-xs hover:bg-slate-50 active:scale-[0.98] transition-all text-left"
           >
-            <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#00236f] flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#1e3a5f] flex items-center justify-center shrink-0">
               <FileEdit className="w-4 h-4" />
             </div>
             <div className="min-w-0">
@@ -905,9 +905,9 @@ export const DashboardView: React.FC = () => {
 
           <button
             onClick={() => setCurrentView('stats')}
-            className="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-blue-200 text-[#00236f] shadow-xs hover:bg-blue-50/60 active:scale-[0.98] transition-all text-left"
+            className="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-blue-200 text-[#1e3a5f] shadow-xs hover:bg-blue-50/60 active:scale-[0.98] transition-all text-left"
           >
-            <div className="w-8 h-8 rounded-lg bg-blue-100 text-[#00236f] flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-blue-100 text-[#1e3a5f] flex items-center justify-center shrink-0">
               <BarChart3 className="w-4 h-4" />
             </div>
             <div className="min-w-0">
@@ -979,7 +979,7 @@ export const DashboardView: React.FC = () => {
           </div>
 
           <div className="flex items-baseline gap-1.5">
-            <span className="text-3xl sm:text-4xl font-extrabold text-[#00236f] tracking-tight font-mono">
+            <span className="text-3xl sm:text-4xl font-extrabold text-[#1e3a5f] tracking-tight font-mono">
               {(totalCollected || 0).toLocaleString('fr-FR')}
             </span>
             <span className="text-sm font-bold text-slate-500">FCFA</span>
@@ -1007,7 +1007,7 @@ export const DashboardView: React.FC = () => {
         {/* Count KPI Cards */}
         <div className="grid grid-cols-2 gap-3">
           <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm flex flex-col justify-between">
-            <div className="flex items-center justify-between text-[#00236f]">
+            <div className="flex items-center justify-between text-[#1e3a5f]">
               <span className="text-[11px] font-bold text-slate-400 uppercase">Élèves</span>
               <Users className="w-4 h-4" />
             </div>
@@ -1036,7 +1036,7 @@ export const DashboardView: React.FC = () => {
       <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm space-y-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <PieChart className="w-4 h-4 text-[#00236f]" />
+            <PieChart className="w-4 h-4 text-[#1e3a5f]" />
             <h3 className="text-sm font-bold text-slate-900">Répartition des Règlements (Canaux)</h3>
           </div>
           <span className="text-xs text-slate-400">Temps réel</span>
@@ -1095,7 +1095,7 @@ export const DashboardView: React.FC = () => {
       <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm space-y-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4 text-[#00236f]" />
+            <Clock className="w-4 h-4 text-[#1e3a5f]" />
             <h3 className="text-sm font-bold text-slate-900">Journal d'Activité Récente</h3>
           </div>
           <span className="text-xs text-emerald-700 font-semibold">Synchronisé en local</span>
@@ -1129,7 +1129,7 @@ export const DashboardView: React.FC = () => {
           {(activityLogs || []).slice(0, 2).map((log) => (
             <div key={log.id} className="py-2.5 flex items-start justify-between gap-3">
               <div className="flex items-start gap-2.5 min-w-0">
-                <div className="w-8 h-8 rounded-full bg-blue-50 text-[#00236f] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-8 h-8 rounded-full bg-blue-50 text-[#1e3a5f] flex items-center justify-center shrink-0 mt-0.5">
                   <CheckCircle2 className="w-4 h-4" />
                 </div>
                 <div className="min-w-0">

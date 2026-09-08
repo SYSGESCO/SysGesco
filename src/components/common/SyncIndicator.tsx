@@ -137,7 +137,7 @@ export const SyncIndicator: React.FC<{ compact?: boolean }> = ({ compact = false
                   <HardDrive className="w-3.5 h-3.5 text-blue-600" />
                   Technologie de stockage :
                 </span>
-                <span className="font-bold text-[#00236f] dark:text-blue-400 font-mono text-[11px] bg-white dark:bg-slate-700 px-2 py-0.5 rounded-md border border-slate-200 dark:border-slate-600">
+                <span className="font-bold text-[#1e3a5f] dark:text-blue-400 font-mono text-[11px] bg-white dark:bg-slate-700 px-2 py-0.5 rounded-md border border-slate-200 dark:border-slate-600">
                   {storageType}
                 </span>
               </div>
@@ -176,7 +176,7 @@ export const SyncIndicator: React.FC<{ compact?: boolean }> = ({ compact = false
             {/* Offline-first Explanation Note */}
             <div className="p-2.5 rounded-xl bg-blue-50/60 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/40 text-[11px] text-blue-900 dark:text-blue-200 space-y-1">
               <div className="flex items-center gap-1.5 font-bold">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#00236f] dark:text-blue-400" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#1e3a5f] dark:text-blue-400" />
                 <span>Garantie de continuité sans connexion</span>
               </div>
               <p className="text-[10.5px] leading-relaxed text-blue-800/90 dark:text-blue-300/90">

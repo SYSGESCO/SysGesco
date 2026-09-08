@@ -198,7 +198,7 @@ export const DataExportModal: React.FC<DataExportModalProps> = ({
     <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
       <div className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
         {/* Header */}
-        <div className="px-6 py-4 bg-[#00236f] text-white flex items-center justify-between">
+        <div className="px-6 py-4 bg-[#1e3a5f] text-white flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white">
               <Printer className="w-5 h-5" />
@@ -226,7 +226,7 @@ export const DataExportModal: React.FC<DataExportModalProps> = ({
             onClick={() => setActiveTab('students')}
             className={`pb-3 px-3 text-xs font-bold flex items-center gap-2 border-b-2 transition-all ${
               activeTab === 'students'
-                ? 'border-[#00236f] text-[#00236f]'
+                ? 'border-[#1e3a5f] text-[#1e3a5f]'
                 : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -242,7 +242,7 @@ export const DataExportModal: React.FC<DataExportModalProps> = ({
             onClick={() => setActiveTab('grades')}
             className={`pb-3 px-3 text-xs font-bold flex items-center gap-2 border-b-2 transition-all ${
               activeTab === 'grades'
-                ? 'border-[#00236f] text-[#00236f]'
+                ? 'border-[#1e3a5f] text-[#1e3a5f]'
                 : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -258,7 +258,7 @@ export const DataExportModal: React.FC<DataExportModalProps> = ({
             onClick={() => setActiveTab('cashier')}
             className={`pb-3 px-3 text-xs font-bold flex items-center gap-2 border-b-2 transition-all ${
               activeTab === 'cashier'
-                ? 'border-[#00236f] text-[#00236f]'
+                ? 'border-[#1e3a5f] text-[#1e3a5f]'
                 : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -278,7 +278,7 @@ export const DataExportModal: React.FC<DataExportModalProps> = ({
           {activeTab === 'students' && (
             <div className="space-y-4">
               <div className="bg-blue-50/60 p-3.5 rounded-xl border border-blue-100 flex items-start gap-3">
-                <Users className="w-5 h-5 text-[#00236f] shrink-0 mt-0.5" />
+                <Users className="w-5 h-5 text-[#1e3a5f] shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
                     Exportation des listes d'élèves et état des scolarités
@@ -298,7 +298,7 @@ export const DataExportModal: React.FC<DataExportModalProps> = ({
                   <select
                     value={studentClassId}
                     onChange={(e) => setStudentClassId(e.target.value)}
-                    className="w-full h-10 px-3 rounded-lg border border-slate-200 bg-white text-xs font-medium focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-lg border border-slate-200 bg-white text-xs font-medium focus:outline-none focus:border-[#1e3a5f]"
                   >
                     <option value="all">Toutes les classes ({students.length} élèves)</option>
                     {classes.map((c) => {
@@ -431,7 +431,7 @@ export const DataExportModal: React.FC<DataExportModalProps> = ({
                   <select
                     value={gradeClassId}
                     onChange={(e) => setGradeClassId(e.target.value)}
-                    className="w-full h-10 px-3 rounded-lg border border-slate-200 bg-white text-xs font-medium focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-lg border border-slate-200 bg-white text-xs font-medium focus:outline-none focus:border-[#1e3a5f]"
                   >
                     {classes.map((c) => (
                       <option key={c.id} value={c.id}>
@@ -448,7 +448,7 @@ export const DataExportModal: React.FC<DataExportModalProps> = ({
                   <select
                     value={gradeTerm}
                     onChange={(e) => setGradeTerm(e.target.value as any)}
-                    className="w-full h-10 px-3 rounded-lg border border-slate-200 bg-white text-xs font-medium focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-lg border border-slate-200 bg-white text-xs font-medium focus:outline-none focus:border-[#1e3a5f]"
                   >
                     <option value="T1">Trimestre 1 (T1)</option>
                     <option value="T2">Trimestre 2 (T2)</option>
@@ -463,7 +463,7 @@ export const DataExportModal: React.FC<DataExportModalProps> = ({
                   <select
                     value={gradeSubjectId}
                     onChange={(e) => setGradeSubjectId(e.target.value)}
-                    className="w-full h-10 px-3 rounded-lg border border-slate-200 bg-white text-xs font-medium focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-lg border border-slate-200 bg-white text-xs font-medium focus:outline-none focus:border-[#1e3a5f]"
                   >
                     <option value="all">Toutes les matières</option>
                     {subjects.map((sub) => (
@@ -576,7 +576,7 @@ export const DataExportModal: React.FC<DataExportModalProps> = ({
                   <select
                     value={cashierMethod}
                     onChange={(e) => setCashierMethod(e.target.value)}
-                    className="w-full h-10 px-3 rounded-lg border border-slate-200 bg-white text-xs font-medium focus:outline-none focus:border-[#00236f]"
+                    className="w-full h-10 px-3 rounded-lg border border-slate-200 bg-white text-xs font-medium focus:outline-none focus:border-[#1e3a5f]"
                   >
                     <option value="all">Tous les modes ({payments.length} reçus)</option>
                     <option value="Espèce">Espèce</option>

@@ -84,7 +84,7 @@ export const HomeworkView: React.FC = () => {
       {/* Header */}
       <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#00236f] flex items-center justify-center">
+          <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#1e3a5f] flex items-center justify-center">
             <BookMarked className="w-4 h-4" />
           </div>
           <div>
@@ -109,7 +109,7 @@ export const HomeworkView: React.FC = () => {
           {(currentRole === 'teacher' || currentRole === 'direction' || currentRole === 'superadmin') && (
             <button
               onClick={() => setShowAddModal(true)}
-              className="h-10 px-4 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold flex items-center gap-2 shadow-xs"
+              className="h-10 px-4 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold flex items-center gap-2 shadow-xs"
             >
               <Plus className="w-4 h-4" />
               <span>Donner un devoir</span>
@@ -130,7 +130,7 @@ export const HomeworkView: React.FC = () => {
               }`}
             >
               <div className="space-y-1">
-                <span className="text-[10px] font-bold text-[#00236f] bg-blue-50 px-2.5 py-0.5 rounded-full uppercase">
+                <span className="text-[10px] font-bold text-[#1e3a5f] bg-blue-50 px-2.5 py-0.5 rounded-full uppercase">
                   {hw.subject}
                 </span>
                 <h3 className={`text-sm font-bold pt-1 ${isDone ? 'line-through text-slate-400' : 'text-slate-900'}`}>
@@ -214,7 +214,7 @@ export const HomeworkView: React.FC = () => {
                   value={newTitle}
                   onChange={(e) => setNewTitle(e.target.value)}
                   placeholder="ex: Rédaction p. 45, exercices 3 et 4..."
-                  className="w-full p-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                  className="w-full p-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                 />
               </div>
 
@@ -240,7 +240,7 @@ export const HomeworkView: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="w-2/3 h-11 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold shadow-xs"
+                  className="w-2/3 h-11 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold shadow-xs"
                 >
                   Publier le devoir
                 </button>

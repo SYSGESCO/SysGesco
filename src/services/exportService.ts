@@ -328,7 +328,7 @@ const addOfficialPdfHeader = (
   // Right: Institution & Year
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(8.5);
-  doc.setTextColor(0, 35, 111); // Brand Blue #00236f
+  doc.setTextColor(0, 35, 111); // Brand Blue #1e3a5f
   doc.text(institution.name.toUpperCase(), pageWidth - 14, 12, { align: 'right' });
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(7.5);

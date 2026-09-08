@@ -125,8 +125,8 @@ export const Navigation: React.FC = () => {
                 onClick={() => setCurrentView(item.id)}
                 className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
                   isActive
-                    ? 'bg-[#00236f] text-white shadow-xs'
-                    : 'text-slate-600 hover:text-[#00236f] hover:bg-slate-100/70'
+                    ? 'bg-[#1e3a5f] text-white shadow-xs'
+                    : 'text-slate-600 hover:text-[#1e3a5f] hover:bg-slate-100/70'
                 }`}
               >
                 {item.icon}
@@ -147,7 +147,7 @@ export const Navigation: React.FC = () => {
                 key={item.id}
                 onClick={() => setCurrentView(item.id)}
                 className={`flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 transition-colors ${
-                  isActive ? 'text-[#00236f] font-bold' : 'text-slate-500 hover:text-slate-800'
+                  isActive ? 'text-[#1e3a5f] font-bold' : 'text-slate-500 hover:text-slate-800'
                 }`}
               >
                 {item.icon}
@@ -168,7 +168,7 @@ export const Navigation: React.FC = () => {
               }}
               className={`flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 transition-colors ${
                 currentView === 'settings' || currentView === 'stats'
-                  ? 'text-[#00236f] font-bold'
+                  ? 'text-[#1e3a5f] font-bold'
                   : 'text-slate-500 hover:text-slate-800'
               }`}
             >

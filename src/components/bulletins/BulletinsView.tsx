@@ -144,7 +144,7 @@ export const BulletinsView: React.FC = () => {
           <select
             value={selectedTerm}
             onChange={(e) => setSelectedTerm(e.target.value as any)}
-            className="h-10 px-3 rounded-xl border border-slate-200 text-xs font-bold text-[#00236f] bg-blue-50"
+            className="h-10 px-3 rounded-xl border border-slate-200 text-xs font-bold text-[#1e3a5f] bg-blue-50"
           >
             <option value="T1">Trimestre 1</option>
             <option value="T2">Trimestre 2</option>
@@ -154,7 +154,7 @@ export const BulletinsView: React.FC = () => {
           {/* Print Button */}
           <button
             onClick={() => window.print()}
-            className="h-10 px-4 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-xs transition-all"
+            className="h-10 px-4 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-xs transition-all"
           >
             <Printer className="w-4 h-4" />
             <span>Imprimer Bulletin A4</span>
@@ -167,7 +167,7 @@ export const BulletinsView: React.FC = () => {
       {/* ======================================================== */}
       <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm max-w-4xl mx-auto space-y-6 text-slate-900 print:shadow-none print:border-0 print:p-0 print:m-0 print:max-w-none">
         {/* En-Tête Officiel République & Établissement */}
-        <div className="border-b-2 border-[#00236f] pb-4 flex items-start justify-between gap-4">
+        <div className="border-b-2 border-[#1e3a5f] pb-4 flex items-start justify-between gap-4">
           <div className="text-left space-y-1">
             <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">
               RÉPUBLIQUE DE CÔTE D'IVOIRE
@@ -187,7 +187,7 @@ export const BulletinsView: React.FC = () => {
               alt="Logo"
               className="h-10 mx-auto object-contain mb-1"
             />
-            <h2 className="text-base font-extrabold text-[#00236f] uppercase tracking-tight">
+            <h2 className="text-base font-extrabold text-[#1e3a5f] uppercase tracking-tight">
               {activeInstitution?.name}
             </h2>
             <p className="text-[11px] text-slate-500 font-mono">
@@ -196,10 +196,10 @@ export const BulletinsView: React.FC = () => {
           </div>
 
           <div className="text-right space-y-0.5">
-            <span className="text-[11px] font-bold text-[#00236f] uppercase block">
+            <span className="text-[11px] font-bold text-[#1e3a5f] uppercase block">
               Année Scolaire {activeInstitution?.academicYear}
             </span>
-            <span className="text-xs font-extrabold bg-[#00236f] text-white px-2 py-0.5 rounded uppercase inline-block">
+            <span className="text-xs font-extrabold bg-[#1e3a5f] text-white px-2 py-0.5 rounded uppercase inline-block">
               BULLETIN DU {selectedTerm === 'T1' ? '1ER' : selectedTerm === 'T2' ? '2ÈME' : '3ÈME'} TRIMESTRE
             </span>
           </div>
@@ -207,7 +207,7 @@ export const BulletinsView: React.FC = () => {
 
         {/* Fiche de Renseignement Élève */}
         {selectedStudent && (
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#faf8ff] p-3.5 rounded-xl border border-blue-100 text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#f5f7fa] p-3.5 rounded-xl border border-blue-100 text-xs">
             <div>
               <span className="text-[10px] text-slate-400 uppercase font-semibold block">Nom &amp; Prénoms</span>
               <span className="font-extrabold text-slate-900 text-sm">
@@ -216,7 +216,7 @@ export const BulletinsView: React.FC = () => {
             </div>
             <div>
               <span className="text-[10px] text-slate-400 uppercase font-semibold block">Matricule Élève</span>
-              <span className="font-mono font-bold text-[#00236f] text-sm">
+              <span className="font-mono font-bold text-[#1e3a5f] text-sm">
                 {selectedStudent.matricule}
               </span>
             </div>
@@ -280,7 +280,7 @@ export const BulletinsView: React.FC = () => {
             </tbody>
             {/* Totaux */}
             <tfoot>
-              <tr className="bg-[#f2f3ff] font-bold border-t-2 border-[#00236f]">
+              <tr className="bg-[#f2f3ff] font-bold border-t-2 border-[#1e3a5f]">
                 <td className="py-2.5 px-3 border-r border-slate-200 uppercase font-extrabold text-slate-900">
                   Total Général
                 </td>
@@ -288,12 +288,12 @@ export const BulletinsView: React.FC = () => {
                 <td className="py-2.5 px-2 border-r border-slate-200 text-center font-mono font-extrabold text-slate-900">
                   {totalCoeffs}
                 </td>
-                <td className="py-2.5 px-2 border-r border-slate-200 text-center font-mono font-extrabold text-[#00236f]">
+                <td className="py-2.5 px-2 border-r border-slate-200 text-center font-mono font-extrabold text-[#1e3a5f]">
                   {(totalPoints ?? 0).toFixed(2)}
                 </td>
                 <td colSpan={3} className="py-2.5 px-3 text-right text-xs">
                   Moyenne Générale :{' '}
-                  <span className="text-base font-extrabold text-[#00236f] font-mono px-2 py-0.5 bg-white rounded border border-blue-200">
+                  <span className="text-base font-extrabold text-[#1e3a5f] font-mono px-2 py-0.5 bg-white rounded border border-blue-200">
                     {generalAverage} / 20
                   </span>
                 </td>
@@ -308,7 +308,7 @@ export const BulletinsView: React.FC = () => {
             <span className="text-[10px] text-slate-400 uppercase font-bold block">
               Moyenne &amp; Rang Trimestriel
             </span>
-            <p className="font-extrabold text-sm text-[#00236f] font-mono mt-0.5">
+            <p className="font-extrabold text-sm text-[#1e3a5f] font-mono mt-0.5">
               {generalAverage} / 20 •{' '}
               <span className="text-emerald-700">2e sur {classStudents.length} élèves</span>
             </p>
@@ -349,7 +349,7 @@ export const BulletinsView: React.FC = () => {
           </div>
 
           <div className="space-y-12">
-            <span className="font-bold text-[#00236f] block">Le Chef d'Établissement</span>
+            <span className="font-bold text-[#1e3a5f] block">Le Chef d'Établissement</span>
             <div className="flex flex-col items-center justify-center">
               <span className="text-[10px] font-bold text-slate-800 uppercase">
                 {activeInstitution?.directorName}

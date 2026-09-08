@@ -65,7 +65,7 @@ export const ClassesView: React.FC = () => {
 
         <button
           onClick={() => setShowAddModal(true)}
-          className="h-10 px-4 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold flex items-center gap-2 shadow-xs transition-all"
+          className="h-10 px-4 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold flex items-center gap-2 shadow-xs transition-all"
         >
           <Plus className="w-4 h-4" />
           <span>Créer une classe</span>
@@ -91,7 +91,7 @@ export const ClassesView: React.FC = () => {
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
                     {c.level}
                   </span>
-                  <h3 className="text-lg font-extrabold text-[#00236f]">{c.name}</h3>
+                  <h3 className="text-lg font-extrabold text-[#1e3a5f]">{c.name}</h3>
                 </div>
                 <div className="flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
                   <span>{rate}% payé</span>
@@ -100,14 +100,14 @@ export const ClassesView: React.FC = () => {
 
               <div className="space-y-1.5 text-xs text-slate-600">
                 <div className="flex items-center gap-2">
-                  <Users className="w-3.5 h-3.5 text-[#00236f]" />
+                  <Users className="w-3.5 h-3.5 text-[#1e3a5f]" />
                   <span>
                     Effectif : <strong>{classStudents.length} élèves</strong>
                   </span>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <GraduationCap className="w-3.5 h-3.5 text-[#00236f]" />
+                  <GraduationCap className="w-3.5 h-3.5 text-[#1e3a5f]" />
                   <span>
                     Prof. Principal :{' '}
                     <strong>
@@ -117,7 +117,7 @@ export const ClassesView: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <DoorOpen className="w-3.5 h-3.5 text-[#00236f]" />
+                  <DoorOpen className="w-3.5 h-3.5 text-[#1e3a5f]" />
                   <span>
                     Salle : <strong>{c.room || 'Salle principale'}</strong>
                   </span>
@@ -135,7 +135,7 @@ export const ClassesView: React.FC = () => {
               <div className="pt-2 border-t border-slate-100 flex items-center gap-2">
                 <button
                   onClick={() => setSelectedClassDetail(c)}
-                  className="flex-1 h-9 rounded-lg bg-blue-50 hover:bg-blue-100 text-[#00236f] text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                  className="flex-1 h-9 rounded-lg bg-blue-50 hover:bg-blue-100 text-[#1e3a5f] text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
                 >
                   <span>Liste des élèves ({classStudents.length})</span>
                   <ChevronRight className="w-3.5 h-3.5" />
@@ -200,7 +200,7 @@ export const ClassesView: React.FC = () => {
               </button>
               <button
                 onClick={() => setSelectedClassDetail(null)}
-                className="h-10 px-5 bg-[#00236f] text-white rounded-xl text-xs font-semibold"
+                className="h-10 px-5 bg-[#1e3a5f] text-white rounded-xl text-xs font-semibold"
               >
                 Fermer
               </button>
@@ -303,7 +303,7 @@ export const ClassesView: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="w-2/3 h-11 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold shadow-xs"
+                  className="w-2/3 h-11 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold shadow-xs"
                 >
                   Créer la classe
                 </button>

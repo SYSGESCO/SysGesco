@@ -28,7 +28,7 @@ export const SuperAdminView: React.FC = () => {
             <div
               key={inst.id}
               className={`bg-white rounded-2xl p-5 border shadow-sm transition-all space-y-3 ${
-                isCurrent ? 'border-[#00236f] ring-2 ring-blue-100' : 'border-slate-100'
+                isCurrent ? 'border-[#1e3a5f] ring-2 ring-blue-100' : 'border-slate-100'
               }`}
             >
               <div className="flex items-start justify-between">
@@ -40,7 +40,7 @@ export const SuperAdminView: React.FC = () => {
                   <p className="text-xs text-slate-500">{inst.city} • {inst.type}</p>
                 </div>
                 {isCurrent && (
-                  <span className="px-2 py-0.5 rounded-full bg-blue-50 text-[#00236f] text-[10px] font-bold">
+                  <span className="px-2 py-0.5 rounded-full bg-blue-50 text-[#1e3a5f] text-[10px] font-bold">
                     Actif
                   </span>
                 )}
@@ -69,7 +69,7 @@ export const SuperAdminView: React.FC = () => {
                 className={`w-full h-10 rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-all ${
                   isCurrent
                     ? 'bg-slate-100 text-slate-700'
-                    : 'bg-[#00236f] hover:bg-[#1e3a8a] text-white shadow-xs'
+                    : 'bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white shadow-xs'
                 }`}
               >
                 <span>{isCurrent ? 'Déjà sélectionné' : 'Basculer vers cet établissement'}</span>

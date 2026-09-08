@@ -47,14 +47,14 @@ export class ErrorBoundary extends React.Component<Props, State> {
   public render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-[#faf8ff] flex items-center justify-center p-4 font-sans text-slate-800">
+        <div className="min-h-screen bg-[#f5f7fa] flex items-center justify-center p-4 font-sans text-slate-800">
           <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-slate-200 p-6 space-y-4 text-center">
             <div className="w-14 h-14 mx-auto rounded-2xl bg-amber-50 border border-amber-200 text-amber-600 flex items-center justify-center">
               <AlertTriangle className="w-8 h-8" />
             </div>
 
             <div className="space-y-1">
-              <h1 className="text-lg font-bold text-[#00236f]">SysGesco — Récupération</h1>
+              <h1 className="text-lg font-bold text-[#1e3a5f]">SysGesco — Récupération</h1>
               <p className="text-xs text-slate-500">
                 Une interruption est survenue lors de l'initialisation de l'application.
               </p>
@@ -72,7 +72,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
               <button
                 type="button"
                 onClick={this.handleReload}
-                className="w-full h-11 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition-colors shadow-xs"
+                className="w-full h-11 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition-colors shadow-xs"
               >
                 <RotateCcw className="w-4 h-4" />
                 <span>Rafraîchir l'application</span>

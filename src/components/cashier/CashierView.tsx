@@ -150,14 +150,14 @@ export const CashierView: React.FC = () => {
             Caisse Locale • Guichet Central ({activeInstitution?.name})
           </span>
         </div>
-        <div className="flex items-center gap-1 text-[11px] text-[#00236f] font-semibold">
+        <div className="flex items-center gap-1 text-[11px] text-[#1e3a5f] font-semibold">
           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
           <span>Sync Auto Active</span>
         </div>
       </div>
 
       {/* Résumé Trésorerie du Jour (Section 43) */}
-      <section className="relative overflow-hidden rounded-2xl bg-[#00236f] text-white p-5 shadow-md">
+      <section className="relative overflow-hidden rounded-2xl bg-[#1e3a5f] text-white p-5 shadow-md">
         <div className="flex items-center justify-between">
           <span className="text-xs font-semibold text-blue-200 uppercase tracking-wider">
             Total Encaissé Aujourd’hui
@@ -247,7 +247,7 @@ export const CashierView: React.FC = () => {
                   value={studentSearch}
                   onChange={(e) => setStudentSearch(e.target.value)}
                   placeholder="Tapez nom, prénom ou MAT-2026-XXXX..."
-                  className="w-full h-10 pl-9 pr-3 rounded-xl border border-slate-200 bg-slate-50/50 text-xs text-slate-900 focus:bg-white focus:border-[#00236f] focus:outline-none"
+                  className="w-full h-10 pl-9 pr-3 rounded-xl border border-slate-200 bg-slate-50/50 text-xs text-slate-900 focus:bg-white focus:border-[#1e3a5f] focus:outline-none"
                 />
               </div>
 
@@ -283,7 +283,7 @@ export const CashierView: React.FC = () => {
               <div className="bg-[#f2f3ff] rounded-xl p-3.5 border border-blue-100 space-y-2">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="font-bold text-xs text-[#00236f]">
+                    <span className="font-bold text-xs text-[#1e3a5f]">
                       {selectedStudent.lastName} {selectedStudent.firstName}
                     </span>
                     <span className="text-[10px] text-slate-500 block font-mono">
@@ -341,7 +341,7 @@ export const CashierView: React.FC = () => {
                   required
                   value={paymentAmount}
                   onChange={(e) => setPaymentAmount(Number(e.target.value))}
-                  className="w-full h-11 px-3.5 rounded-xl border border-slate-200 text-base font-extrabold font-mono text-slate-900 focus:outline-none focus:border-[#00236f]"
+                  className="w-full h-11 px-3.5 rounded-xl border border-slate-200 text-base font-extrabold font-mono text-slate-900 focus:outline-none focus:border-[#1e3a5f]"
                 />
                 <span className="absolute right-3.5 top-3 text-xs font-bold text-slate-400">
                   FCFA
@@ -401,7 +401,7 @@ export const CashierView: React.FC = () => {
                         onClick={() => setPaymentMode(mode)}
                         className={`p-2 rounded-xl text-center text-xs font-semibold border transition-all ${
                           isSelected
-                            ? 'bg-[#00236f] text-white border-[#00236f] shadow-xs'
+                            ? 'bg-[#1e3a5f] text-white border-[#1e3a5f] shadow-xs'
                             : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
                         }`}
                       >
@@ -421,7 +421,7 @@ export const CashierView: React.FC = () => {
                 value={observation}
                 onChange={(e) => setObservation(e.target.value)}
                 placeholder="ex: Scolarité Trimestre 2, Frais d'examen..."
-                className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                className="w-full h-10 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
               />
             </div>
 
@@ -443,7 +443,7 @@ export const CashierView: React.FC = () => {
         <section className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm space-y-4 flex flex-col justify-between">
           <div className="flex items-center justify-between border-b pb-3">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#00236f] flex items-center justify-center">
+              <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#1e3a5f] flex items-center justify-center">
                 <Receipt className="w-4 h-4" />
               </div>
               <div>
@@ -460,10 +460,10 @@ export const CashierView: React.FC = () => {
           </div>
 
           {activeReceipt ? (
-            <div className="bg-[#faf8ff] rounded-2xl p-4 border border-slate-100 space-y-3 font-sans text-xs">
+            <div className="bg-[#f5f7fa] rounded-2xl p-4 border border-slate-100 space-y-3 font-sans text-xs">
               <div className="flex items-start justify-between border-b border-slate-200/60 pb-3">
                 <div>
-                  <h3 className="font-extrabold text-[#00236f] text-sm">SYSGESCO AFRIQUE</h3>
+                  <h3 className="font-extrabold text-[#1e3a5f] text-sm">SYSGESCO AFRIQUE</h3>
                   <p className="text-[11px] font-semibold text-slate-700">
                     {activeInstitution?.name}
                   </p>
@@ -471,7 +471,7 @@ export const CashierView: React.FC = () => {
                 </div>
                 <div className="text-right">
                   <span className="text-[10px] text-slate-400 uppercase font-mono block">Référence</span>
-                  <span className="font-extrabold text-[#00236f] font-mono">{activeReceipt.receiptNumber}</span>
+                  <span className="font-extrabold text-[#1e3a5f] font-mono">{activeReceipt.receiptNumber}</span>
                   <span className="text-[10px] text-slate-400 block mt-0.5">{activeReceipt.date}</span>
                 </div>
               </div>
@@ -494,7 +494,7 @@ export const CashierView: React.FC = () => {
                 </div>
                 <div className="flex justify-between py-0.5">
                   <span className="text-slate-400">Mode de règlement :</span>
-                  <span className="font-semibold text-[#00236f]">{activeReceipt.paymentMethod}</span>
+                  <span className="font-semibold text-[#1e3a5f]">{activeReceipt.paymentMethod}</span>
                 </div>
                 <div className="flex justify-between py-0.5">
                   <span className="text-slate-400">Motif :</span>
@@ -538,14 +538,14 @@ export const CashierView: React.FC = () => {
               onClick={() => window.print()}
               className="h-10 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs flex items-center justify-center gap-1.5 transition-colors"
             >
-              <Printer className="w-4 h-4 text-[#00236f]" />
+              <Printer className="w-4 h-4 text-[#1e3a5f]" />
               <span>Imprimer A4</span>
             </button>
             <button
               onClick={() => {
                 showToast('Reçu PDF prêt pour téléchargement.', 'success');
               }}
-              className="h-10 rounded-xl bg-[#00236f] hover:bg-[#1e3a8a] text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-xs"
+              className="h-10 rounded-xl bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-xs"
             >
               <Download className="w-4 h-4" />
               <span>Télécharger</span>
@@ -558,7 +558,7 @@ export const CashierView: React.FC = () => {
       <section className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-3">
           <div className="flex items-center gap-2">
-            <History className="w-4 h-4 text-[#00236f]" />
+            <History className="w-4 h-4 text-[#1e3a5f]" />
             <h3 className="text-sm font-bold text-slate-900">
               Journal des Encaissements &amp; Règlements
             </h3>
@@ -600,7 +600,7 @@ export const CashierView: React.FC = () => {
                   <td className="py-3 px-3 text-slate-500 font-mono text-[11px]">
                     {pay.date.slice(0, 16)}
                   </td>
-                  <td className="py-3 px-3 font-mono font-bold text-[#00236f]">
+                  <td className="py-3 px-3 font-mono font-bold text-[#1e3a5f]">
                     {pay.receiptNumber}
                   </td>
                   <td className="py-3 px-3">
@@ -619,7 +619,7 @@ export const CashierView: React.FC = () => {
                   <td className="py-3 px-3 text-center">
                     <button
                       onClick={() => setActiveReceipt(pay)}
-                      className="px-2 py-1 rounded bg-blue-50 text-[#00236f] hover:bg-blue-100 text-[11px] font-semibold"
+                      className="px-2 py-1 rounded bg-blue-50 text-[#1e3a5f] hover:bg-blue-100 text-[11px] font-semibold"
                     >
                       Voir reçu
                     </button>

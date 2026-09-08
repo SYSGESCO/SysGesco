@@ -359,7 +359,7 @@ export const StatsView: React.FC = () => {
 
   const getMentionLabel = (avg: number) => {
     if (avg >= 16) return { text: 'Très Bien', color: 'bg-emerald-100 text-emerald-800 border-emerald-300' };
-    if (avg >= 14) return { text: 'Bien', color: 'bg-blue-100 text-[#00236f] border-blue-300' };
+    if (avg >= 14) return { text: 'Bien', color: 'bg-blue-100 text-[#1e3a5f] border-blue-300' };
     if (avg >= 12) return { text: 'Assez Bien', color: 'bg-sky-100 text-sky-800 border-sky-300' };
     if (avg >= 10) return { text: 'Passable', color: 'bg-amber-100 text-amber-800 border-amber-300' };
     return { text: 'Insuffisant', color: 'bg-rose-100 text-rose-800 border-rose-300' };
@@ -371,13 +371,13 @@ export const StatsView: React.FC = () => {
       <div className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-100 shadow-xs space-y-3">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#00236f] flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#1e3a5f] flex items-center justify-center shrink-0">
               <BarChart3 className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="text-lg font-bold text-slate-900">Tableau de Bord Statistique</h1>
-                <span className="text-[10px] font-mono font-bold bg-blue-100 text-[#00236f] px-2 py-0.5 rounded-full">
+                <span className="text-[10px] font-mono font-bold bg-blue-100 text-[#1e3a5f] px-2 py-0.5 rounded-full">
                   Temps Réel
                 </span>
               </div>
@@ -400,7 +400,7 @@ export const StatsView: React.FC = () => {
             </button>
             <button
               onClick={handlePrint}
-              className="h-9 px-3 rounded-xl bg-[#00236f] hover:bg-[#1e3a8a] text-white text-xs font-semibold flex items-center gap-1.5 shadow-xs transition-colors"
+              className="h-9 px-3 rounded-xl bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white text-xs font-semibold flex items-center gap-1.5 shadow-xs transition-colors"
               title="Imprimer le rapport de direction"
             >
               <Printer className="w-3.5 h-3.5" />
@@ -413,7 +413,7 @@ export const StatsView: React.FC = () => {
         <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs print:hidden">
           <div className="flex flex-wrap items-center gap-2.5">
             <span className="font-bold text-slate-500 flex items-center gap-1 uppercase tracking-wider text-[10px]">
-              <Filter className="w-3 h-3 text-[#00236f]" /> Filtres :
+              <Filter className="w-3 h-3 text-[#1e3a5f]" /> Filtres :
             </span>
 
             {/* Période / Trimestre */}
@@ -429,7 +429,7 @@ export const StatsView: React.FC = () => {
                   onClick={() => setSelectedTerm(t.id)}
                   className={`px-2.5 py-1 rounded-lg font-semibold transition-all ${
                     selectedTerm === t.id
-                      ? 'bg-white text-[#00236f] shadow-2xs'
+                      ? 'bg-white text-[#1e3a5f] shadow-2xs'
                       : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
@@ -442,7 +442,7 @@ export const StatsView: React.FC = () => {
             <select
               value={selectedClassId}
               onChange={(e) => setSelectedClassId(e.target.value)}
-              className="h-8 px-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 font-semibold focus:outline-none focus:border-[#00236f]"
+              className="h-8 px-2.5 rounded-xl border border-slate-200 bg-white text-slate-800 font-semibold focus:outline-none focus:border-[#1e3a5f]"
             >
               <option value="all">Toutes les classes ({classes.length})</option>
               {classes.map((c) => (
@@ -465,7 +465,7 @@ export const StatsView: React.FC = () => {
         <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm space-y-2">
           <div className="flex items-center justify-between text-slate-400 text-xs font-bold uppercase tracking-wider">
             <span>Effectifs &amp; Mixité</span>
-            <div className="w-7 h-7 rounded-lg bg-blue-50 text-[#00236f] flex items-center justify-center">
+            <div className="w-7 h-7 rounded-lg bg-blue-50 text-[#1e3a5f] flex items-center justify-center">
               <Users className="w-3.5 h-3.5" />
             </div>
           </div>
@@ -531,7 +531,7 @@ export const StatsView: React.FC = () => {
             </div>
           </div>
           <div>
-            <p className="text-2xl font-extrabold text-[#00236f] font-mono leading-tight">
+            <p className="text-2xl font-extrabold text-[#1e3a5f] font-mono leading-tight">
               {globalAverage} <span className="text-xs font-normal text-slate-500">/ 20</span>
             </p>
           </div>
@@ -578,7 +578,7 @@ export const StatsView: React.FC = () => {
           onClick={() => setActiveTab('overview')}
           className={`px-4 py-2.5 text-xs font-bold flex items-center gap-2 border-b-2 transition-all ${
             activeTab === 'overview'
-              ? 'border-[#00236f] text-[#00236f]'
+              ? 'border-[#1e3a5f] text-[#1e3a5f]'
               : 'border-transparent text-slate-500 hover:text-slate-800'
           }`}
         >
@@ -590,7 +590,7 @@ export const StatsView: React.FC = () => {
           onClick={() => setActiveTab('academic')}
           className={`px-4 py-2.5 text-xs font-bold flex items-center gap-2 border-b-2 transition-all ${
             activeTab === 'academic'
-              ? 'border-[#00236f] text-[#00236f]'
+              ? 'border-[#1e3a5f] text-[#1e3a5f]'
               : 'border-transparent text-slate-500 hover:text-slate-800'
           }`}
         >
@@ -602,7 +602,7 @@ export const StatsView: React.FC = () => {
           onClick={() => setActiveTab('finance')}
           className={`px-4 py-2.5 text-xs font-bold flex items-center gap-2 border-b-2 transition-all ${
             activeTab === 'finance'
-              ? 'border-[#00236f] text-[#00236f]'
+              ? 'border-[#1e3a5f] text-[#1e3a5f]'
               : 'border-transparent text-slate-500 hover:text-slate-800'
           }`}
         >
@@ -614,7 +614,7 @@ export const StatsView: React.FC = () => {
           onClick={() => setActiveTab('attendance')}
           className={`px-4 py-2.5 text-xs font-bold flex items-center gap-2 border-b-2 transition-all ${
             activeTab === 'attendance'
-              ? 'border-[#00236f] text-[#00236f]'
+              ? 'border-[#1e3a5f] text-[#1e3a5f]'
               : 'border-transparent text-slate-500 hover:text-slate-800'
           }`}
         >
@@ -633,7 +633,7 @@ export const StatsView: React.FC = () => {
             <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm space-y-4">
               <div className="flex items-center justify-between border-b pb-3">
                 <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-[#00236f]" />
+                  <Users className="w-4 h-4 text-[#1e3a5f]" />
                   <h2 className="text-sm font-bold text-slate-900">Effectifs par Classe (Parité F / G)</h2>
                 </div>
                 <span className="text-xs text-slate-500">Capacités &amp; Répartition</span>
@@ -646,7 +646,7 @@ export const StatsView: React.FC = () => {
                   return (
                     <div key={c.id} className="space-y-1">
                       <div className="flex justify-between text-xs font-semibold text-slate-800">
-                        <span className="font-bold text-[#00236f]">{c.name}</span>
+                        <span className="font-bold text-[#1e3a5f]">{c.name}</span>
                         <span className="text-slate-500 font-mono">
                           {c.total} élèves ({c.boys}G / {c.girls}F)
                         </span>
@@ -697,7 +697,7 @@ export const StatsView: React.FC = () => {
                     <div key={c.id} className="space-y-1">
                       <div className="flex justify-between text-xs">
                         <span className="font-bold text-slate-800">{c.name}</span>
-                        <span className="font-mono font-bold text-[#00236f]">{c.clsAvg} / 20</span>
+                        <span className="font-mono font-bold text-[#1e3a5f]">{c.clsAvg} / 20</span>
                       </div>
                       <div className="relative w-full bg-slate-100 h-3 rounded-full overflow-hidden">
                         <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-400/50 z-10" />
@@ -715,7 +715,7 @@ export const StatsView: React.FC = () => {
 
               <div className="pt-2 border-t flex items-center justify-between text-[11px] text-slate-500">
                 <span>Ligne repère médiane = 10/20</span>
-                <span>Moyenne établissement : <strong className="text-[#00236f]">{globalAverage}/20</strong></span>
+                <span>Moyenne établissement : <strong className="text-[#1e3a5f]">{globalAverage}/20</strong></span>
               </div>
             </div>
           </div>
@@ -724,7 +724,7 @@ export const StatsView: React.FC = () => {
           <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm space-y-4">
             <div className="flex items-center justify-between border-b pb-3">
               <div className="flex items-center gap-2">
-                <PieChart className="w-4 h-4 text-[#00236f]" />
+                <PieChart className="w-4 h-4 text-[#1e3a5f]" />
                 <h2 className="text-sm font-bold text-slate-900">
                   Distribution des Mentions &amp; Niveaux de Réussite
                 </h2>
@@ -745,7 +745,7 @@ export const StatsView: React.FC = () => {
 
               <div className="p-3 rounded-xl bg-blue-50 border border-blue-200 text-center space-y-1">
                 <span className="text-[10px] uppercase font-bold text-blue-800">Bien (14 - 15.9)</span>
-                <p className="text-xl font-extrabold text-[#00236f] font-mono">{mentionStats.tresBien}</p>
+                <p className="text-xl font-extrabold text-[#1e3a5f] font-mono">{mentionStats.tresBien}</p>
                 <span className="text-[11px] text-blue-700">
                   {totalStudentsCount > 0 ? Math.round((mentionStats.tresBien / totalStudentsCount) * 100) : 0}%
                 </span>
@@ -787,7 +787,7 @@ export const StatsView: React.FC = () => {
             <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm space-y-4">
               <div className="flex items-center justify-between border-b pb-3">
                 <div className="flex items-center gap-2">
-                  <BookOpen className="w-4 h-4 text-[#00236f]" />
+                  <BookOpen className="w-4 h-4 text-[#1e3a5f]" />
                   <h2 className="text-sm font-bold text-slate-900">Moyenne par Discipline Académique</h2>
                 </div>
                 <span className="text-xs text-slate-500">Coefficients pris en compte</span>
@@ -803,7 +803,7 @@ export const StatsView: React.FC = () => {
                         <span className="text-slate-800">
                           {sub.name} <span className="text-slate-400 font-normal">(Coeff. {sub.coeff})</span>
                         </span>
-                        <span className="font-mono font-bold text-[#00236f]">{sub.average} / 20</span>
+                        <span className="font-mono font-bold text-[#1e3a5f]">{sub.average} / 20</span>
                       </div>
                       <div className="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
                         <div
@@ -852,7 +852,7 @@ export const StatsView: React.FC = () => {
                         </div>
                       </div>
                       <div className="text-right">
-                        <span className="text-sm font-extrabold text-[#00236f] font-mono block">
+                        <span className="text-sm font-extrabold text-[#1e3a5f] font-mono block">
                           {item.average} / 20
                         </span>
                         <span className="text-[9px] font-bold text-emerald-700 uppercase">
@@ -962,7 +962,7 @@ export const StatsView: React.FC = () => {
             <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm space-y-4">
               <div className="flex items-center justify-between border-b pb-3">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#00236f]" />
+                  <CheckCircle2 className="w-4 h-4 text-[#1e3a5f]" />
                   <h2 className="text-sm font-bold text-slate-900">Statut de Solvabilité</h2>
                 </div>
                 <span className="text-xs text-slate-500">{totalStudentsCount} élèves</span>
@@ -1046,7 +1046,7 @@ export const StatsView: React.FC = () => {
             <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm space-y-4">
               <div className="flex items-center justify-between border-b pb-3">
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-[#00236f]" />
+                  <Clock className="w-4 h-4 text-[#1e3a5f]" />
                   <h2 className="text-sm font-bold text-slate-900">Discipline &amp; Présence</h2>
                 </div>
                 <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
@@ -1086,7 +1086,7 @@ export const StatsView: React.FC = () => {
             <div className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm space-y-4">
               <div className="flex items-center justify-between border-b pb-3">
                 <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-[#00236f]" />
+                  <Users className="w-4 h-4 text-[#1e3a5f]" />
                   <h2 className="text-sm font-bold text-slate-900">Indicateurs Démographiques</h2>
                 </div>
                 <span className="text-xs text-slate-500 font-mono">Total {totalStudentsCount}</span>
@@ -1111,7 +1111,7 @@ export const StatsView: React.FC = () => {
                 <div className="grid grid-cols-2 gap-2 text-center">
                   <div className="p-2.5 rounded-xl border border-slate-100 bg-white">
                     <span className="text-[10px] text-slate-400 uppercase font-bold block">Divisions Actives</span>
-                    <span className="text-base font-extrabold text-[#00236f]">{classes.length} classes</span>
+                    <span className="text-base font-extrabold text-[#1e3a5f]">{classes.length} classes</span>
                   </div>
                   <div className="p-2.5 rounded-xl border border-slate-100 bg-white">
                     <span className="text-[10px] text-slate-400 uppercase font-bold block">Taille Moyenne Classe</span>
@@ -1131,7 +1131,7 @@ export const StatsView: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-3">
           <div>
             <h2 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-              <School className="w-4 h-4 text-[#00236f]" />
+              <School className="w-4 h-4 text-[#1e3a5f]" />
               <span>Tableau Matriciel par Division Pédagogique</span>
             </h2>
             <p className="text-[11px] text-slate-500">
@@ -1144,7 +1144,7 @@ export const StatsView: React.FC = () => {
             <select
               value={tableSortBy}
               onChange={(e) => setTableSortBy(e.target.value as any)}
-              className="h-8 px-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-[#00236f]"
+              className="h-8 px-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-[#1e3a5f]"
             >
               <option value="average">Moyenne Générale</option>
               <option value="recovery">Taux Recouvrement</option>
@@ -1182,7 +1182,7 @@ export const StatsView: React.FC = () => {
                 const mention = getMentionLabel(row.clsAvg);
                 return (
                   <tr key={row.id} className="hover:bg-slate-50/60 transition-colors">
-                    <td className="py-3 px-3 font-bold text-[#00236f]">{row.name}</td>
+                    <td className="py-3 px-3 font-bold text-[#1e3a5f]">{row.name}</td>
                     <td className="py-3 px-3 text-slate-500">{row.level}</td>
                     <td className="py-3 px-3 font-mono font-bold text-slate-900">{row.total}</td>
                     <td className="py-3 px-3 text-slate-500 font-mono">
@@ -1232,7 +1232,7 @@ export const StatsView: React.FC = () => {
                 <td className="py-2.5 px-3 font-mono">
                   {boysCount}G / {girlsCount}F
                 </td>
-                <td className="py-2.5 px-3 text-right font-mono text-[#00236f]">{globalAverage}</td>
+                <td className="py-2.5 px-3 text-right font-mono text-[#1e3a5f]">{globalAverage}</td>
                 <td className="py-2.5 px-3 text-right font-mono text-emerald-700">{passRate}%</td>
                 <td className="py-2.5 px-3 text-right font-mono">
                   {totalTuitionDue.toLocaleString('fr-FR')} F

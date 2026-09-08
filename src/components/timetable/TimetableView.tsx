@@ -109,7 +109,7 @@ export const TimetableView: React.FC = () => {
       {/* Header & Controls Bar */}
       <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 no-print">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#00236f] flex items-center justify-center">
+          <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#1e3a5f] flex items-center justify-center">
             <Calendar className="w-4 h-4" />
           </div>
           <div>
@@ -124,7 +124,7 @@ export const TimetableView: React.FC = () => {
             <button
               onClick={() => setFilterMode('class')}
               className={`px-3 py-1.5 rounded-lg font-semibold transition-all ${
-                filterMode === 'class' ? 'bg-white text-[#00236f] shadow-xs' : 'text-slate-600'
+                filterMode === 'class' ? 'bg-white text-[#1e3a5f] shadow-xs' : 'text-slate-600'
               }`}
             >
               Par Classe
@@ -132,7 +132,7 @@ export const TimetableView: React.FC = () => {
             <button
               onClick={() => setFilterMode('teacher')}
               className={`px-3 py-1.5 rounded-lg font-semibold transition-all ${
-                filterMode === 'teacher' ? 'bg-white text-[#00236f] shadow-xs' : 'text-slate-600'
+                filterMode === 'teacher' ? 'bg-white text-[#1e3a5f] shadow-xs' : 'text-slate-600'
               }`}
             >
               Par Professeur
@@ -167,7 +167,7 @@ export const TimetableView: React.FC = () => {
 
           <button
             onClick={() => setShowAddModal(true)}
-            className="h-10 px-3 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-xs"
+            className="h-10 px-3 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-xs"
           >
             <Plus className="w-4 h-4" />
             <span>Ajouter cours</span>
@@ -186,7 +186,7 @@ export const TimetableView: React.FC = () => {
       {/* Timetable Weekly Grid */}
       <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm overflow-x-auto print:border-0 print:p-0">
         <div className="text-center pb-3 border-b border-slate-100 mb-4 hidden print:block">
-          <h2 className="text-lg font-bold text-[#00236f]">
+          <h2 className="text-lg font-bold text-[#1e3a5f]">
             EMPLOI DU TEMPS - {classes.find((c) => c.id === selectedClassId)?.name}
           </h2>
           <p className="text-xs text-slate-500">Année Scolaire 2026-2027 • SysGesco</p>
@@ -198,7 +198,7 @@ export const TimetableView: React.FC = () => {
           {days.map((day) => (
             <div
               key={day}
-              className="p-2.5 rounded-xl bg-slate-50 text-[#00236f] font-bold text-xs uppercase text-center border border-slate-100"
+              className="p-2.5 rounded-xl bg-slate-50 text-[#1e3a5f] font-bold text-xs uppercase text-center border border-slate-100"
             >
               {day}
             </div>
@@ -370,7 +370,7 @@ export const TimetableView: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="w-2/3 h-11 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold shadow-xs"
+                  className="w-2/3 h-11 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold shadow-xs"
                 >
                   Enregistrer le cours
                 </button>

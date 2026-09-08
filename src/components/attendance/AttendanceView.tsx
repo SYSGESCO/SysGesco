@@ -165,7 +165,7 @@ export const AttendanceView: React.FC = () => {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setShowJustifyModal(true)}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#00236f] text-white text-xs font-semibold shadow-xs hover:bg-[#1e3a8a] transition-all"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#1e3a5f] text-white text-xs font-semibold shadow-xs hover:bg-[#1e3a8a] transition-all"
               >
                 <AlertCircle className="w-3.5 h-3.5" />
                 <span>Justifier une absence</span>
@@ -202,7 +202,7 @@ export const AttendanceView: React.FC = () => {
 
             <div className="p-3 rounded-xl bg-blue-50/70 border border-blue-100">
               <span className="text-[11px] font-bold text-slate-500 uppercase block">Absences Injustifiées</span>
-              <div className="text-2xl font-extrabold text-[#00236f] font-mono mt-0.5">0</div>
+              <div className="text-2xl font-extrabold text-[#1e3a5f] font-mono mt-0.5">0</div>
               <span className="text-[10px] text-blue-800 font-medium">Situation en règle</span>
             </div>
           </div>
@@ -288,7 +288,7 @@ export const AttendanceView: React.FC = () => {
                     value={justifyReason}
                     onChange={(e) => setJustifyReason(e.target.value)}
                     placeholder="Ex: Raison médicale (certificat médical joint), urgence familiale..."
-                    className="w-full p-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#00236f]"
+                    className="w-full p-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-[#1e3a5f]"
                   />
                 </div>
 
@@ -302,7 +302,7 @@ export const AttendanceView: React.FC = () => {
                   </button>
                   <button
                     type="submit"
-                    className="w-2/3 h-11 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold shadow-xs"
+                    className="w-2/3 h-11 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold shadow-xs"
                   >
                     Envoyer à la Vie Scolaire
                   </button>
@@ -332,7 +332,7 @@ export const AttendanceView: React.FC = () => {
         )}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-3">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#00236f] flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#1e3a5f] flex items-center justify-center">
               <ClipboardList className="w-4 h-4" />
             </div>
             <div>
@@ -354,7 +354,7 @@ export const AttendanceView: React.FC = () => {
 
             <button
               onClick={handleSaveAttendance}
-              className="h-10 px-4 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold flex items-center gap-2 shadow-xs transition-all"
+              className="h-10 px-4 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold flex items-center gap-2 shadow-xs transition-all"
             >
               <Save className="w-4 h-4" />
               <span>Valider l'Appel</span>
@@ -460,7 +460,7 @@ export const AttendanceView: React.FC = () => {
               >
                 <div className="flex items-center gap-3">
                   <span className="font-mono text-xs text-slate-400 w-6">{idx + 1}.</span>
-                  <div className="w-9 h-9 rounded-full bg-slate-100 text-[#00236f] flex items-center justify-center font-bold text-xs shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-slate-100 text-[#1e3a5f] flex items-center justify-center font-bold text-xs shrink-0">
                     {student.firstName[0]}
                     {student.lastName[0]}
                   </div>

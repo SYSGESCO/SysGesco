@@ -144,7 +144,7 @@ export const TeachersView: React.FC = () => {
             setNewLoginPassword('Prof@2026');
             setShowAddModal(true);
           }}
-          className="h-10 px-4 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold flex items-center gap-2 shadow-xs transition-all"
+          className="h-10 px-4 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold flex items-center gap-2 shadow-xs transition-all"
         >
           <Plus className="w-4 h-4" />
           <span>Ajouter un professeur</span>
@@ -201,8 +201,8 @@ export const TeachersView: React.FC = () => {
                 {/* Login Info Pill */}
                 <div className="flex items-center justify-between p-2 rounded-xl bg-blue-50/60 border border-blue-100 text-[11px]">
                   <div className="flex items-center gap-1 text-slate-700 truncate">
-                    <User className="w-3.5 h-3.5 text-[#00236f] shrink-0" />
-                    <span className="font-mono font-bold text-[#00236f] truncate">{login}</span>
+                    <User className="w-3.5 h-3.5 text-[#1e3a5f] shrink-0" />
+                    <span className="font-mono font-bold text-[#1e3a5f] truncate">{login}</span>
                   </div>
                   <button
                     type="button"
@@ -211,7 +211,7 @@ export const TeachersView: React.FC = () => {
                       setIsChangingPassword(false);
                       setCustomNewPassword(teacher.loginPassword || 'Prof@2026');
                     }}
-                    className="text-[10px] font-bold text-[#00236f] hover:underline flex items-center gap-0.5 shrink-0"
+                    className="text-[10px] font-bold text-[#1e3a5f] hover:underline flex items-center gap-0.5 shrink-0"
                   >
                     <KeyRound className="w-3 h-3" /> Accès
                   </button>
@@ -232,7 +232,7 @@ export const TeachersView: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setCurrentView('timetable')}
-                  className="h-9 px-2.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-[#00236f] text-xs font-semibold flex items-center justify-center gap-1 transition-colors"
+                  className="h-9 px-2.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-[#1e3a5f] text-xs font-semibold flex items-center justify-center gap-1 transition-colors"
                   title="Consulter l'emploi du temps"
                 >
                   <Calendar className="w-3.5 h-3.5" />
@@ -259,7 +259,7 @@ export const TeachersView: React.FC = () => {
           <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-6 space-y-4 max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between border-b pb-3">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-[#00236f]/10 text-[#00236f] flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-[#1e3a5f]/10 text-[#1e3a5f] flex items-center justify-center">
                   <GraduationCap className="w-4 h-4" />
                 </div>
                 <div>
@@ -379,15 +379,15 @@ export const TeachersView: React.FC = () => {
               <div className="border-t border-slate-100 pt-3 space-y-2.5">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
-                    <ShieldCheck className="w-4 h-4 text-[#00236f]" />
+                    <ShieldCheck className="w-4 h-4 text-[#1e3a5f]" />
                     <span className="text-xs font-bold text-slate-800">Espace Enseignant &amp; Accès Dédié</span>
                   </div>
-                  <label className="flex items-center gap-1.5 cursor-pointer text-[11px] font-semibold text-[#00236f] select-none">
+                  <label className="flex items-center gap-1.5 cursor-pointer text-[11px] font-semibold text-[#1e3a5f] select-none">
                     <input
                       type="checkbox"
                       checked={createTeacherPortalAccount}
                       onChange={(e) => setCreateTeacherPortalAccount(e.target.checked)}
-                      className="w-4 h-4 rounded border-slate-300 text-[#00236f] focus:ring-[#00236f]"
+                      className="w-4 h-4 rounded border-slate-300 text-[#1e3a5f] focus:ring-[#1e3a5f]"
                     />
                     <span>Attribuer un compte</span>
                   </label>
@@ -406,7 +406,7 @@ export const TeachersView: React.FC = () => {
                             value={newLoginUsername}
                             onChange={(e) => setNewLoginUsername(e.target.value)}
                             placeholder="ex: prof.kouame"
-                            className="w-full h-9 pl-7 pr-2 rounded-lg border border-slate-200 bg-white text-xs font-mono font-bold text-slate-800 focus:outline-none focus:border-[#00236f]"
+                            className="w-full h-9 pl-7 pr-2 rounded-lg border border-slate-200 bg-white text-xs font-mono font-bold text-slate-800 focus:outline-none focus:border-[#1e3a5f]"
                           />
                           <User className="w-3.5 h-3.5 text-slate-400 absolute left-2 top-2.5 pointer-events-none" />
                         </div>
@@ -423,7 +423,7 @@ export const TeachersView: React.FC = () => {
                           <button
                             type="button"
                             onClick={generateRandomPassword}
-                            className="text-[10px] text-[#00236f] font-bold hover:underline flex items-center gap-0.5"
+                            className="text-[10px] text-[#1e3a5f] font-bold hover:underline flex items-center gap-0.5"
                           >
                             <Sparkles className="w-2.5 h-2.5" /> Générer
                           </button>
@@ -434,7 +434,7 @@ export const TeachersView: React.FC = () => {
                             value={newLoginPassword}
                             onChange={(e) => setNewLoginPassword(e.target.value)}
                             placeholder="Prof@2026"
-                            className="w-full h-9 pl-7 pr-8 rounded-lg border border-slate-200 bg-white text-xs font-mono font-bold text-slate-800 focus:outline-none focus:border-[#00236f]"
+                            className="w-full h-9 pl-7 pr-8 rounded-lg border border-slate-200 bg-white text-xs font-mono font-bold text-slate-800 focus:outline-none focus:border-[#1e3a5f]"
                           />
                           <KeyRound className="w-3.5 h-3.5 text-slate-400 absolute left-2 top-2.5 pointer-events-none" />
                           <button
@@ -468,7 +468,7 @@ export const TeachersView: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="w-2/3 h-11 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold shadow-xs"
+                  className="w-2/3 h-11 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-semibold shadow-xs"
                 >
                   Enregistrer et générer accès
                 </button>
@@ -511,7 +511,7 @@ export const TeachersView: React.FC = () => {
                   Identifiant (Login)
                 </span>
                 <div className="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-slate-200">
-                  <span className="font-mono font-bold text-sm text-[#00236f]">
+                  <span className="font-mono font-bold text-sm text-[#1e3a5f]">
                     {createdTeacherCredentials.username}
                   </span>
                   <button
@@ -522,7 +522,7 @@ export const TeachersView: React.FC = () => {
                       setTimeout(() => setCopiedLogin(false), 2000);
                       showToast('Identifiant copié !', 'success');
                     }}
-                    className="text-xs font-semibold text-[#00236f] hover:underline flex items-center gap-1"
+                    className="text-xs font-semibold text-[#1e3a5f] hover:underline flex items-center gap-1"
                   >
                     {copiedLogin ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copiedLogin ? 'Copié' : 'Copier'}</span>
@@ -547,7 +547,7 @@ export const TeachersView: React.FC = () => {
                       setTimeout(() => setCopiedPassword(false), 2000);
                       showToast('Mot de passe copié !', 'success');
                     }}
-                    className="text-xs font-semibold text-[#00236f] hover:underline flex items-center gap-1"
+                    className="text-xs font-semibold text-[#1e3a5f] hover:underline flex items-center gap-1"
                   >
                     {copiedPassword ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copiedPassword ? 'Copié' : 'Copier'}</span>
@@ -568,7 +568,7 @@ export const TeachersView: React.FC = () => {
                   loginAsTeacher(createdTeacherCredentials.teacher.id);
                   setCreatedTeacherCredentials(null);
                 }}
-                className="w-full h-11 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-xs transition-colors"
+                className="w-full h-11 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-xs transition-colors"
               >
                 <LogIn className="w-4 h-4" />
                 <span>Tester et basculer sur l'espace professeur</span>
@@ -606,7 +606,7 @@ export const TeachersView: React.FC = () => {
           <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-6 space-y-4">
             <div className="flex items-center justify-between border-b pb-3">
               <div className="flex items-center gap-2">
-                <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#00236f] flex items-center justify-center font-bold text-xs">
+                <div className="w-9 h-9 rounded-xl bg-blue-50 text-[#1e3a5f] flex items-center justify-center font-bold text-xs">
                   {activeTeacherModal.firstName[0]}{activeTeacherModal.lastName[0]}
                 </div>
                 <div>
@@ -628,11 +628,11 @@ export const TeachersView: React.FC = () => {
             </div>
 
             {/* Accès Espace Enseignant */}
-            <div className="bg-[#faf8ff] p-3 rounded-xl border border-blue-100 space-y-2.5">
+            <div className="bg-[#f5f7fa] p-3 rounded-xl border border-blue-100 space-y-2.5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-[#00236f]" />
-                  <h4 className="font-bold text-[#00236f] text-xs uppercase tracking-wider">
+                  <ShieldCheck className="w-4 h-4 text-[#1e3a5f]" />
+                  <h4 className="font-bold text-[#1e3a5f] text-xs uppercase tracking-wider">
                     Accès Espace Personnel Enseignant
                   </h4>
                 </div>
@@ -642,7 +642,7 @@ export const TeachersView: React.FC = () => {
                     loginAsTeacher(activeTeacherModal.id);
                     setActiveTeacherModal(null);
                   }}
-                  className="px-2.5 py-1 bg-[#00236f] hover:bg-[#1e3a8a] text-white rounded-lg text-[11px] font-bold flex items-center gap-1 shadow-2xs"
+                  className="px-2.5 py-1 bg-[#1e3a5f] hover:bg-[#1e3a8a] text-white rounded-lg text-[11px] font-bold flex items-center gap-1 shadow-2xs"
                   title="Basculer et tester l'espace de ce professeur"
                 >
                   <LogIn className="w-3 h-3" />
@@ -664,7 +664,7 @@ export const TeachersView: React.FC = () => {
                         navigator.clipboard.writeText(val);
                         showToast('Identifiant copié !', 'success');
                       }}
-                      className="p-1 text-slate-400 hover:text-[#00236f]"
+                      className="p-1 text-slate-400 hover:text-[#1e3a5f]"
                       title="Copier l'identifiant"
                     >
                       <Copy className="w-3 h-3" />
@@ -684,7 +684,7 @@ export const TeachersView: React.FC = () => {
                         navigator.clipboard.writeText(activeTeacherModal.loginPassword || 'Prof@2026');
                         showToast('Mot de passe copié !', 'success');
                       }}
-                      className="p-1 text-slate-400 hover:text-[#00236f]"
+                      className="p-1 text-slate-400 hover:text-[#1e3a5f]"
                       title="Copier le mot de passe"
                     >
                       <Copy className="w-3 h-3" />
@@ -701,7 +701,7 @@ export const TeachersView: React.FC = () => {
                     value={customNewPassword}
                     onChange={(e) => setCustomNewPassword(e.target.value)}
                     placeholder="Nouveau mot de passe..."
-                    className="flex-1 h-8 px-2.5 rounded-lg border border-slate-200 text-xs font-mono font-bold focus:outline-none focus:border-[#00236f]"
+                    className="flex-1 h-8 px-2.5 rounded-lg border border-slate-200 text-xs font-mono font-bold focus:outline-none focus:border-[#1e3a5f]"
                   />
                   <button
                     type="button"
@@ -746,7 +746,7 @@ export const TeachersView: React.FC = () => {
                       setIsChangingPassword(true);
                       setCustomNewPassword(activeTeacherModal.loginPassword || 'Prof@2026');
                     }}
-                    className="text-[#00236f] font-semibold hover:underline flex items-center gap-1"
+                    className="text-[#1e3a5f] font-semibold hover:underline flex items-center gap-1"
                   >
                     <KeyRound className="w-3 h-3" /> Modifier le mot de passe
                   </button>

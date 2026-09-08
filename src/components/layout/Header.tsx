@@ -22,6 +22,7 @@ import {
 import { PWAInstallButton } from '../common/PWAInstallButton';
 import { SyncIndicator } from '../common/SyncIndicator';
 import { DataExportModal } from '../common/DataExportModal';
+import { SysGescoLogo } from '../common/SysGescoLogo';
 
 interface HeaderProps {
   onMenuClick?: () => void;
@@ -122,11 +123,11 @@ export const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
           >
             <Menu className="h-5 w-5" />
           </button>
-          <div className="flex items-center gap-1.5 font-bold text-[#1e3a5f] text-base">
-            <span className="w-6 h-6 rounded bg-[#d97706] text-white flex items-center justify-center text-xs font-black">
-              SG
+          <div className="flex items-center gap-2">
+            <SysGescoLogo size="xs" />
+            <span className="font-bold text-[#1e3a5f] text-base">
+              Sys<span className="text-[#f97316]">Gesco</span>
             </span>
-            <span>SysGesco</span>
           </div>
         </div>
 

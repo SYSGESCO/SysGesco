@@ -1,5 +1,6 @@
 import React from 'react';
 import { useApp, ActiveView } from '../../context/AppContext';
+import { SysGescoLogo } from '../common/SysGescoLogo';
 import {
   LayoutDashboard,
   Users,
@@ -155,12 +156,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
   return (
     <div className="flex h-full w-64 flex-col bg-[#192333] text-[#c9d5e4] border-r border-[#222f42] select-none">
       {/* Brand Header */}
-      <div className="flex items-center gap-3 px-4 py-4 border-b border-[#222f42]">
-        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#d97706] text-white font-bold text-sm shrink-0 shadow-xs">
-          SG
-        </div>
+      <div className="flex items-center gap-3 px-4 py-3.5 border-b border-[#222f42]">
+        <SysGescoLogo size="md" />
         <div className="min-w-0 flex-1">
-          <p className="font-bold text-white text-base leading-tight">SysGesco</p>
+          <p className="font-bold text-white text-base leading-tight">
+            Sys<span className="text-[#f97316]">Gesco</span>
+          </p>
           <p className="text-xs text-[#94a3b8] truncate">
             {activeInstitution?.academicYear || '2026-2027'} • {activeInstitution?.name || 'Établissement'}
           </p>

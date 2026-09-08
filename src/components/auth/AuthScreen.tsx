@@ -51,6 +51,7 @@ import {
   Info,
 } from 'lucide-react';
 import { PWAInstallButton } from '../common/PWAInstallButton';
+import { SysGescoLogo } from '../common/SysGescoLogo';
 
 export const AuthScreen: React.FC = () => {
   const { login, registerInstitution, launchDemo, institutionsList, getInstitutionUsers } = useApp();
@@ -481,9 +482,7 @@ export const AuthScreen: React.FC = () => {
         {/* Top: Logo & Title */}
         <div className="relative z-10">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl bg-[#d97706] text-white flex items-center justify-center font-black text-base tracking-wider shadow-md">
-              SG
-            </div>
+            <SysGescoLogo size="md" />
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-black text-xl tracking-tight text-white">SYSGESCO</span>
@@ -500,8 +499,10 @@ export const AuthScreen: React.FC = () => {
 
         {/* Center: Pitch & Headline */}
         <div className="relative z-10 my-auto py-8 space-y-5">
-          <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center backdrop-blur-sm border border-white/10">
-            <GraduationCap className="w-7 h-7 text-amber-400" />
+          <div className="flex items-center gap-3">
+            <div className="p-2.5 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 shadow-lg">
+              <SysGescoLogo size="lg" />
+            </div>
           </div>
 
           <div className="space-y-3">
@@ -546,10 +547,10 @@ export const AuthScreen: React.FC = () => {
         <header className="lg:hidden w-full max-w-4xl mx-auto mb-4">
           <div className="w-full bg-white border border-slate-200 rounded-2xl px-4 py-2.5 flex items-center justify-between shadow-2xs">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-[#d97706] text-white flex items-center justify-center font-extrabold text-sm tracking-wider">
-                SG
-              </div>
-              <span className="font-extrabold text-base text-[#1e3a5f] tracking-wide">SYSGESCO</span>
+              <SysGescoLogo size="sm" />
+              <span className="font-extrabold text-base text-[#1e3a5f] tracking-wide">
+                Sys<span className="text-[#f97316]">Gesco</span>
+              </span>
             </div>
             <PWAInstallButton compact />
           </div>

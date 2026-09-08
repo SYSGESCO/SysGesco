@@ -9,6 +9,7 @@ import { AuthScreen } from './components/auth/AuthScreen';
 import { Header } from './components/layout/Header';
 import { Sidebar } from './components/layout/Sidebar';
 import { Toast } from './components/common/Toast';
+import { SysGescoLogo } from './components/common/SysGescoLogo';
 import { X } from 'lucide-react';
 
 import { DashboardView } from './components/dashboard/DashboardView';
@@ -32,11 +33,13 @@ const MainLayout: React.FC = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-[#f5f7fa] flex flex-col items-center justify-center p-4 space-y-4">
-        <div className="w-12 h-12 rounded-xl bg-[#1e3a5f] text-white flex items-center justify-center shadow-lg animate-pulse">
-          <span className="font-black text-base tracking-wider text-amber-400">SG</span>
+        <div className="animate-pulse">
+          <SysGescoLogo size="xl" />
         </div>
         <div className="flex flex-col items-center">
-          <p className="text-sm font-bold text-slate-800">SysGesco</p>
+          <p className="text-base font-bold text-slate-800">
+            Sys<span className="text-[#f97316]">Gesco</span>
+          </p>
           <p className="text-xs text-slate-500">Chargement de votre espace de travail...</p>
         </div>
       </div>

@@ -82,6 +82,7 @@ export const TimetableView: React.FC = () => {
         classId: selectedClassId,
         subjectId: newSubjectId,
         teacherId: newTeacherId,
+        day: newDay,
         dayOfWeek: newDay,
         startTime: newStartTime,
         endTime: newEndTime,

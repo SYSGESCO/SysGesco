@@ -100,6 +100,7 @@ export const TeachersView: React.FC = () => {
         specialty: newSpecialty,
         weeklyHours: newHours,
         assignedClassIds: [],
+        status: 'active',
         loginUsername: loginToUse,
         loginPassword: passwordToUse,
         createTeacherAccount: createTeacherPortalAccount,

@@ -337,6 +337,16 @@ export const GradesView: React.FC = () => {
 
           <div className="flex items-center gap-2">
             <button
+              type="button"
+              onClick={() => setShowExportModal(true)}
+              className="h-10 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors border border-slate-200/60"
+              title="Exporter le Procès-Verbal et relevés de notes en PDF et Excel"
+            >
+              <Download className="w-4 h-4 text-slate-600" />
+              <span>Exporter PV (PDF / Excel)</span>
+            </button>
+
+            <button
               onClick={handleSaveGrades}
               className="h-10 px-4 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-semibold flex items-center gap-2 shadow-xs transition-all"
             >
@@ -563,6 +573,12 @@ export const GradesView: React.FC = () => {
           </table>
         </div>
       </div>
+
+      <DataExportModal
+        isOpen={showExportModal}
+        onClose={() => setShowExportModal(false)}
+        defaultTab="grades"
+      />
     </div>
   );
 };

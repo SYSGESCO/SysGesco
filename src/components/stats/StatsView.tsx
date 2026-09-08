@@ -418,17 +418,22 @@ export const StatsView: React.FC = () => {
 
             {/* Période / Trimestre */}
             <div className="flex items-center gap-1 bg-slate-100 p-0.5 rounded-xl">
-              {(['all', 'Trimestre 1', 'Trimestre 2', 'Trimestre 3'] as const).map((term) => (
+              {([
+                { id: 'all', label: 'Annuel' },
+                { id: 'T1', label: 'Trimestre 1' },
+                { id: 'T2', label: 'Trimestre 2' },
+                { id: 'T3', label: 'Trimestre 3' },
+              ] as const).map((t) => (
                 <button
-                  key={term}
-                  onClick={() => setSelectedTerm(term)}
+                  key={t.id}
+                  onClick={() => setSelectedTerm(t.id)}
                   className={`px-2.5 py-1 rounded-lg font-semibold transition-all ${
-                    selectedTerm === term
+                    selectedTerm === t.id
                       ? 'bg-white text-[#00236f] shadow-2xs'
                       : 'text-slate-600 hover:text-slate-900'
                   }`}
                 >
-                  {term === 'all' ? 'Annuel' : term}
+                  {t.label}
                 </button>
               ))}
             </div>

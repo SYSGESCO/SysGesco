@@ -143,6 +143,7 @@ export interface Teacher {
   specialty?: string;
   weeklyHours?: number;
   assignedClassIds: string[];
+  classesAssigned?: string[];
   isMainTeacherOfClassId?: string;
   status: 'active' | 'inactive';
   loginUsername?: string; // Login espace professeur
@@ -156,8 +157,11 @@ export interface Student {
   firstName: string;
   lastName: string;
   dateOfBirth: string;
+  birthDate?: string;
+  birthPlace?: string;
   gender: 'M' | 'F';
   classId: string;
+  className?: string;
   guardianName: string;
   guardianPhone: string;
   guardianEmail?: string;
@@ -267,7 +271,7 @@ export type DayOfWeek = 'Lundi' | 'Mardi' | 'Mercredi' | 'Jeudi' | 'Vendredi' | 
 export interface TimetableSlot {
   id: string;
   institutionId: string;
-  day: DayOfWeek;
+  day?: DayOfWeek;
   dayOfWeek?: DayOfWeek;
   startTime: string; // '08:00'
   endTime: string;   // '10:00'

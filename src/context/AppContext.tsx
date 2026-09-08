@@ -69,6 +69,7 @@ interface AppContextType {
   currentRole: UserRole;
   isDemoMode: boolean;
   isOnline: boolean;
+  isLoading: boolean;
   institutionsList: Institution[];
   currentView: ActiveView;
   setCurrentView: (view: ActiveView) => void;
@@ -177,6 +178,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [institutionsList, setInstitutionsList] = useState<Institution[]>([]);
   const [isOnline, setIsOnline] = useState<boolean>(typeof navigator !== 'undefined' ? navigator.onLine : true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [currentView, setCurrentView] = useState<ActiveView>('dashboard');
   const [selectedStudentId, setSelectedStudentId] = useState<string | null>(null);
 
@@ -301,49 +303,55 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   // Load initial institutions & initialize Demo if first run
   useEffect(() => {
     async function startup() {
-      await repository.init();
-      const existingInstitutions = await repository.getInstitutions();
-
-      if (existingInstitutions.length === 0) {
-        // Preload DEMO institution
-        const demoData = createDemoData();
-        await repository.saveInstitution(demoData.institution);
-        await repository.saveSettings(demoData.settings);
-
-        for (const cls of demoData.classes) await repository.saveClass(cls);
-        for (const tch of demoData.teachers) await repository.saveTeacher(tch);
-        for (const std of demoData.students) await repository.saveStudent(std);
-        for (const par of demoData.parents) await repository.saveParent(par);
-        for (const usr of demoData.users) await repository.saveUser(usr);
-        for (const pay of demoData.payments) await repository.savePayment(pay);
-        for (const grd of demoData.grades) await repository.saveGrade(grd);
-        for (const rc of demoData.reportCards) await repository.saveReportCard(rc);
-        for (const slot of demoData.timetable) await repository.saveTimetableSlot(slot);
-        for (const hw of demoData.homework) await repository.saveHomework(hw);
-        for (const att of demoData.attendance) await repository.saveAttendance(att);
-
-        setInstitutionsList([demoData.institution]);
-      } else {
-        setInstitutionsList(existingInstitutions);
-      }
-
-      // Restore session if available in sessionStorage
       try {
-        const savedSession = sessionStorage.getItem('sysgesco_session');
-        if (savedSession) {
-          const { instId, userId } = JSON.parse(savedSession);
-          const inst = await repository.getInstitutionById(instId);
-          if (inst) {
-            const allUsers = await repository.getUsers(instId);
-            const user = allUsers.find((u) => u.id === userId);
-            if (user) {
-              setActiveInstitution(inst);
-              setCurrentUser(user);
+        await repository.init();
+        const existingInstitutions = await repository.getInstitutions();
+
+        if (existingInstitutions.length === 0) {
+          // Preload DEMO institution
+          const demoData = createDemoData();
+          await repository.saveInstitution(demoData.institution);
+          await repository.saveSettings(demoData.settings);
+
+          for (const cls of demoData.classes) await repository.saveClass(cls);
+          for (const tch of demoData.teachers) await repository.saveTeacher(tch);
+          for (const std of demoData.students) await repository.saveStudent(std);
+          for (const par of demoData.parents) await repository.saveParent(par);
+          for (const usr of demoData.users) await repository.saveUser(usr);
+          for (const pay of demoData.payments) await repository.savePayment(pay);
+          for (const grd of demoData.grades) await repository.saveGrade(grd);
+          for (const rc of demoData.reportCards) await repository.saveReportCard(rc);
+          for (const slot of demoData.timetable) await repository.saveTimetableSlot(slot);
+          for (const hw of demoData.homework) await repository.saveHomework(hw);
+          for (const att of demoData.attendance) await repository.saveAttendance(att);
+
+          setInstitutionsList([demoData.institution]);
+        } else {
+          setInstitutionsList(existingInstitutions);
+        }
+
+        // Restore session if available in sessionStorage
+        try {
+          const savedSession = sessionStorage.getItem('sysgesco_session');
+          if (savedSession) {
+            const { instId, userId } = JSON.parse(savedSession);
+            const inst = await repository.getInstitutionById(instId);
+            if (inst) {
+              const allUsers = await repository.getUsers(instId);
+              const user = allUsers.find((u) => u.id === userId);
+              if (user) {
+                setActiveInstitution(inst);
+                setCurrentUser(user);
+              }
             }
           }
+        } catch (e) {
+          console.warn('Could not restore session', e);
         }
-      } catch (e) {
-        console.warn('Could not restore session', e);
+      } catch (startupErr) {
+        console.error('SysGesco startup error:', startupErr);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -1686,6 +1694,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     currentRole,
     isDemoMode,
     isOnline,
+    isLoading,
     institutionsList,
     currentView,
     setCurrentView,

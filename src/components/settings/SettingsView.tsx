@@ -47,11 +47,11 @@ export const SettingsView: React.FC = () => {
   const {
     activeInstitution,
     currentRole,
-    setCurrentRole,
+    switchRole,
     isDemoMode,
     resetDemoData,
     exportBackupJSON,
-    importBackupJSON,
+    restoreBackupJSON,
     updateInstitutionInfo,
     showToast,
     students,
@@ -144,7 +144,7 @@ export const SettingsView: React.FC = () => {
     reader.onload = async (event) => {
       try {
         const jsonContent = event.target?.result as string;
-        await importBackupJSON(jsonContent);
+        await restoreBackupJSON(jsonContent);
         setImportFile(null);
       } catch (err: any) {
         showToast(err.message || 'Fichier de sauvegarde invalide.', 'error');
@@ -456,7 +456,7 @@ export const SettingsView: React.FC = () => {
             return (
               <button
                 key={r.role}
-                onClick={() => setCurrentRole(r.role)}
+                onClick={() => switchRole(r.role)}
                 className={`p-3 rounded-xl border text-left transition-all ${
                   isSelected
                     ? 'bg-[#00236f] text-white border-[#00236f] shadow-xs'

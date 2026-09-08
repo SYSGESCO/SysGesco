@@ -61,7 +61,7 @@ export const exportStudentsToExcel = (
       'Prénoms': s.firstName,
       'Sexe': s.gender === 'F' ? 'Féminin' : 'Masculin',
       'Classe': cName,
-      'Date Naissance': formatDate(s.birthDate),
+      'Date Naissance': formatDate(s.birthDate || s.dateOfBirth),
       'Lieu Naissance': s.birthPlace || '',
       'Statut': s.status === 'active' ? 'Inscrit' : 'Inactif',
       'Scolarité Totale (FCFA)': total,
@@ -153,7 +153,7 @@ export const exportGradesToExcel = (
       'Note / 20': g.value,
       'Coeff.': g.coefficient,
       'Points (Note x Coeff)': Number((g.value * g.coefficient).toFixed(2)),
-      'Statut': g.status === 'absent' ? 'Absent' : 'Présent',
+      'Statut': g.status?.startsWith('absent') ? 'Absent' : 'Présent',
       'Appréciation': g.comment || (g.value >= 16 ? 'Très Bien' : g.value >= 14 ? 'Bien' : g.value >= 12 ? 'Assez Bien' : g.value >= 10 ? 'Passable' : 'Insuffisant'),
     };
   });
@@ -263,7 +263,7 @@ export const exportCashierToExcel = (
     'Nom de l’Élève': '',
     'Classe': '',
     'Montant Encaissé (FCFA)': totalAmount,
-    'Mode de Règlement': '',
+    'Mode de Règlement': '' as any,
     'Caissier / Opérateur': '',
     'Solde Antérieur (FCFA)': '' as any,
     'Reste Dû (FCFA)': '' as any,
@@ -456,7 +456,7 @@ export const exportStudentsToPdf = (
       s.firstName,
       s.gender || 'M',
       cName,
-      formatDate(s.birthDate),
+      formatDate(s.birthDate || s.dateOfBirth),
       s.guardianName || '-',
       s.guardianPhone || '-',
       formatMoney(paid),
@@ -570,7 +570,7 @@ export const exportGradesToPdf = (
   const tableRows = classStudents.map((s, idx) => {
     const g = gradeMap.get(s.id);
     const noteVal = g ? g.value : 0;
-    const isPresent = g ? g.status !== 'absent' : false;
+    const isPresent = g ? !g.status?.startsWith('absent') : false;
 
     if (g && isPresent) {
       noteSum += noteVal;
@@ -599,10 +599,10 @@ export const exportGradesToPdf = (
       s.matricule,
       s.lastName.toUpperCase(),
       s.firstName,
-      g && isPresent ? `${noteVal.toFixed(2)} / 20` : (g?.status === 'absent' ? 'ABS' : '-'),
+      g && isPresent ? `${noteVal.toFixed(2)} / 20` : (g?.status?.startsWith('absent') ? 'ABS' : '-'),
       g ? g.coefficient : 1,
       g && isPresent ? (noteVal * (g.coefficient || 1)).toFixed(2) : '-',
-      g?.status === 'absent' ? 'Absent' : 'Présent',
+      g?.status?.startsWith('absent') ? 'Absent' : 'Présent',
       apprec,
     ];
   });
